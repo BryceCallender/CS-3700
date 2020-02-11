@@ -1,0 +1,26 @@
+import java.util.concurrent.BlockingQueue;
+
+public class WasherMachineThread extends Thread {
+    private BlockingQueue<String> washingQueue;
+
+    WasherMachineThread(BlockingQueue<String> washingQueue) {
+        this.washingQueue = washingQueue;
+    }
+
+    @Override
+    public void run() {
+        try {
+            while(true) {
+                String color = washingQueue.take();
+
+                if(color == null) {
+                    break;
+                }
+
+                System.out.format("Washer Thread: Destroyed %s socks.%n", color);
+            }
+        }catch(InterruptedException e) {
+
+        }
+    }
+}
