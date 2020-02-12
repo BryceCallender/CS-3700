@@ -1,42 +1,56 @@
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class MatchingSockThread extends Thread {
-    private BlockingQueue<Sock> blockingQueue; //Checking for pairs
+    private BlockingDeque<Sock> blockingDeque; //Checking for pairs
     private BlockingQueue<String> washingQueue;
-    private ConcurrentHashMap<String, Integer> sockMap;
+    public Set<String> sockSet = new HashSet<>();
 
-    MatchingSockThread(BlockingQueue<Sock> blockingQueue, BlockingQueue<String> washingQueue, ConcurrentHashMap<String, Integer> sockMap) {
-        this.blockingQueue = blockingQueue;
+    MatchingSockThread(BlockingDeque<Sock> blockingDeque, BlockingQueue<String> washingQueue) {
+        this.blockingDeque = blockingDeque;
         this.washingQueue = washingQueue;
-        this.sockMap = sockMap;
+
+        sockSet = Collections.synchronizedSet(sockSet);
     }
 
     @Override
-    @SuppressWarnings("InfiniteLoopStatement")
     public void run() {
         while(true) {
             try {
-                
-                washingQueue.put("Red");
+                Iterator<Sock> sockIterator = blockingDeque.iterator();
+                boolean matchedPair = false;
+
+                //While we have not found a pair and the iterator has something to go to next
+                while(!matchedPair && sockIterator.hasNext()) {
+                    Sock sockCheck = sockIterator.next();
+                    if(sockSet.contains(sockCheck.color)) {
+                        matchedPair = true;
+                        blockingDeque.remove(sockCheck);
+                        boolean removedSecondSock = false;
+
+                        while(!removedSecondSock && sockIterator.hasNext()) {
+                            Sock removeSock = sockIterator.next();
+
+                            if(removeSock.color.equals(sockCheck.color)) {
+                                blockingDeque.remove(removeSock);
+                                removedSecondSock = true;
+                            }
+                        }
+                        System.out.format("Matching Thread: Send %s socks to washer. Total socks %d. Total inside queue %d %n",
+                                sockCheck.color, blockingDeque.size(), washingQueue.size());
+
+                        washingQueue.put(sockCheck.color);
+                    }else {
+                        sockSet.add(sockCheck.color);
+                    }
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-    }
-
-//    private boolean stillHaveSocksToMatch() {
-//        for (Map.Entry<String, Integer> entry : sockMap.entrySet()) {
-//            //2 socks can be matched! It will be done when everything has 0 or 1s left
-//            if(entry.getValue() > 1) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-
-    private boolean canMatchAPair(String color) {
-        return sockMap.get(color) > 1;
     }
 }

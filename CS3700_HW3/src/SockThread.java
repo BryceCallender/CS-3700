@@ -1,3 +1,4 @@
+import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
@@ -12,13 +13,11 @@ class Sock {
 
 public class SockThread extends Thread {
     public String sockColor;
-    private BlockingQueue<Sock> blockingQueue;
-    private ConcurrentHashMap<String, Integer> sockMap;
+    private BlockingDeque<Sock> blockingDeque;
 
-    SockThread(String sockColor, BlockingQueue<Sock> blockingQueue, ConcurrentHashMap<String, Integer> sockMap) {
+    SockThread(String sockColor, BlockingDeque<Sock> blockingDeque) {
         this.sockColor = sockColor;
-        this.blockingQueue = blockingQueue;
-        this.sockMap = sockMap;
+        this.blockingDeque = blockingDeque;
     }
 
     @Override
@@ -29,11 +28,7 @@ public class SockThread extends Thread {
             try {
                 System.out.format("%s Sock: Produced %d of %d %n", sockColor, i + 1, sockAmount);
                 Sock sock = new Sock(sockColor);
-                blockingQueue.put(sock);
-
-                int currentCount = sockMap.get(sockColor);
-                sockMap.replace(sockColor, ++currentCount);
-
+                blockingDeque.put(sock);
             }catch(InterruptedException e) {
 
             }
