@@ -1,7 +1,6 @@
 import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
 
 class Sock {
     public String color;
@@ -14,10 +13,12 @@ class Sock {
 public class SockThread extends Thread {
     public String sockColor;
     private BlockingDeque<Sock> blockingDeque;
+    private AtomicInteger atomicInteger;
 
-    SockThread(String sockColor, BlockingDeque<Sock> blockingDeque) {
+    SockThread(String sockColor, BlockingDeque<Sock> blockingDeque, AtomicInteger atomicInteger) {
         this.sockColor = sockColor;
         this.blockingDeque = blockingDeque;
+        this.atomicInteger = atomicInteger;
     }
 
     @Override
@@ -33,6 +34,8 @@ public class SockThread extends Thread {
 
             }
         }
+
+        atomicInteger.incrementAndGet();
     }
 
 }

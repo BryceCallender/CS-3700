@@ -15,7 +15,6 @@ public class WasherMachineThread extends Thread {
                 System.out.format("Washer Thread: Destroyed %s socks.%n", color);
             }
         }catch(InterruptedException e) {
-
         }
     }
 
