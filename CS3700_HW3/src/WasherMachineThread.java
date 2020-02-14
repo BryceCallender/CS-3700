@@ -9,12 +9,13 @@ public class WasherMachineThread extends Thread {
 
     @Override
     public void run() {
-        try {
-            while(true) {
+        while(true) {
+            try {
                 String color = washingQueue.take();
                 System.out.format("Washer Thread: Destroyed %s socks.%n", color);
             }
-        }catch(InterruptedException e) {
+            catch(InterruptedException e) {
+            }
         }
     }
 
