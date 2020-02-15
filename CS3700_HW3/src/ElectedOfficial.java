@@ -14,6 +14,16 @@ public class ElectedOfficial extends Thread {
         this.rankingThread = rankingThread;
 
         System.out.format("%s has been created with a rank of %d and I think I am the leader!%n", name, rank);
+
+//        synchronized (this.rankingThread.lock) {
+//            try {
+                rankingThread.officialsList.add(this);
+                rankingThread.interrupt();
+//                this.rankingThread.lock.wait();
+//            }catch(InterruptedException e) {
+//
+//            }
+//        }
     }
 
     @Override
@@ -21,13 +31,11 @@ public class ElectedOfficial extends Thread {
         while(true) {
             synchronized (rankingThread) {
                 try {
-                    rankingThread.officialsList.put(this);
-                    rankingThread.interrupt();
                     rankingThread.wait();
                 } catch (InterruptedException e) {
                     return;
                 }
-                System.out.println(name + " has been notified of a change");
+                System.out.format("%s: %s was who I thought was leading the election, but it is really %s now!%n", name, leader, rankingThread.leader.name);
             }
         }
     }

@@ -12,9 +12,16 @@ public class OrderedLeaderElection {
 
         rankingThread.start();
 
-        for(int i = 0; i < N; i++) {
-            electedOfficialThreads[i] = new ElectedOfficial("Official" + (i + 1), rankingThread);
-            electedOfficialThreads[i].start();
+        synchronized (rankingThread.lock) {
+            for (int i = 0; i < N; i++) {
+                electedOfficialThreads[i] = new ElectedOfficial("Official" + (i + 1), rankingThread);
+                electedOfficialThreads[i].start();
+                try {
+                    rankingThread.lock.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         try {
@@ -25,9 +32,8 @@ public class OrderedLeaderElection {
 
         officials.forEach(Thread::interrupt);
 
-        System.out.println("The results are in the winning official is....");
-        System.out.println(rankingThread.leader.name + " with a rank of " + rankingThread.leader.rank);
+        System.out.format("The results are in the winning official is....%n%s with a rank of %d%n", rankingThread.leader.name,rankingThread.leader.rank);
 
-        System.exit(0);
+        //System.exit(0);
     }
 }
