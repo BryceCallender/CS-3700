@@ -1,9 +1,10 @@
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ElectedOfficial extends Thread {
-    private String name;
-    private String leader;
+    public String name;
+    public String leader;
     public int rank;
+
     private final RankingThread rankingThread;
 
     ElectedOfficial(String name, RankingThread rankingThread) {
@@ -17,12 +18,17 @@ public class ElectedOfficial extends Thread {
 
     @Override
     public void run() {
-        try {
-            rankingThread.officialsList.put(this);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while(true) {
+            synchronized (rankingThread) {
+                try {
+                    rankingThread.officialsList.put(this);
+                    rankingThread.interrupt();
+                    rankingThread.wait();
+                } catch (InterruptedException e) {
+                    return;
+                }
+                System.out.println(name + " has been notified of a change");
+            }
         }
-
-        rankingThread.interrupt();
     }
 }
