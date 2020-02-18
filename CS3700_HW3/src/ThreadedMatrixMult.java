@@ -41,6 +41,12 @@ public class ThreadedMatrixMult {
         result = generateMatrix(200,200);
 
         matMult(first,second,result,200,200,200);
+
+        first = generateMatrix(1000,1000);
+        second = generateMatrix(1000,1000);
+        result = generateMatrix(1000,1000);
+
+        matMult(first,second,result,1000,1000,1000);
     }
 
     public static void matMult(float[][] A, float [][] B, float[][] C, int m, int n, int p) {
