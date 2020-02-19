@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.concurrent.*;
 
-public class Main {
+public class Game1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
