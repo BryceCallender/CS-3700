@@ -1,8 +1,8 @@
 import java.util.*;
 import java.util.concurrent.*;
 
-public class Game1 {
-    public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
+public class Game1Memoized {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Please Enter the amount of players: ");
@@ -15,31 +15,39 @@ public class Game1 {
                 + (coreCount != 1 ? "s are " : " is ")
                 + "available");
 
-        ArrayList<RPSThread2> players = new ArrayList<>(numPlayers);
+        ArrayList<RPSThread> players = new ArrayList<>(numPlayers);
+        List<Future<?>> futures = new ArrayList<>();
 
         ExecutorService threadPool = Executors.newFixedThreadPool(coreCount);
 
         long start = System.currentTimeMillis();
         do {
-            CyclicBarrier cyclicBarrier = new CyclicBarrier(numPlayers + 1);
             players.clear();
+            futures.clear();
 
             System.out.println("----------------BEGINNING A RPS SESSION----------------");
 
             //Pick the gestures for the round
             for (int i = 0; i < numPlayers; i++) {
-                RPSThread2 rpsThread = new RPSThread2(i, cyclicBarrier);
+                RPSThread rpsThread = new RPSThread(i);
                 players.add(rpsThread);
 
-                threadPool.submit(rpsThread);
+                Future<?> f = threadPool.submit(rpsThread);
+                futures.add(f);
             }
 
-            while(cyclicBarrier.await() != 0) {
-                System.out.println("All done");
+            for (Future<?> future : futures) {
+                try {
+                    future.get(); // get will block until the future is done
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
             }
 
             try {
-                WinnerThread2 winnerThread = new WinnerThread2(players);
+                WinnerThreadMemoized winnerThread = new WinnerThreadMemoized(players);
                 winnerThread.start();
                 winnerThread.join();
             } catch (InterruptedException e) {

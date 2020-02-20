@@ -9,7 +9,7 @@ public class Game2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Random random = new Random();
+//        Random random = new Random();
 
         System.out.print("Please Enter the amount of players: ");
         int numPlayers = scanner.nextInt();

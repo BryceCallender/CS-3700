@@ -6,14 +6,15 @@ public class DeclarationOfIndependenceMain {
             BufferedReader fileReader = new BufferedReader(new FileReader(new File("independence.txt")));
             FileWriter outputFile = new FileWriter("1thread_backwards_independence.txt");
 
+            StringBuilder wholeFile = new StringBuilder();
             String line;
             while((line = fileReader.readLine()) != null) {
-                String[] words = line.split(" ");
-                StringBuilder outputLine = new StringBuilder();
-                for (int i = words.length - 1; i >= 0; i--) {
-                    outputLine.append(words[i]).append(" ");
-                }
-                outputFile.write(outputLine.toString());
+                wholeFile.append(line);
+            }
+
+            String[] words = wholeFile.toString().split(" ");
+            for(int i = words.length - 1; i >= 0; i--) {
+                outputFile.write(words[i] + " ");
             }
 
             outputFile.close();
