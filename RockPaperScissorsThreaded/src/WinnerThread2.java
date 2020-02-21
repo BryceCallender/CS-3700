@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class WinnerThread2 extends Thread {
+public class WinnerThread2 implements Runnable {
     private ArrayList<RPSThread2> players;
     private ArrayList<Integer> playerPoints;
 
@@ -11,6 +11,8 @@ public class WinnerThread2 extends Thread {
 
     @Override
     public void run() {
+        System.out.println("Winner calculations underway...");
+
         playerPoints = new ArrayList<>();
         int points;
         ArrayList<RPSThread2> threadsToRemove = new ArrayList<>();

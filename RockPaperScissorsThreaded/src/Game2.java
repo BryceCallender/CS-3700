@@ -9,8 +9,6 @@ public class Game2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-//        Random random = new Random();
-
         System.out.print("Please Enter the amount of players: ");
         int numPlayers = scanner.nextInt();
 
@@ -41,19 +39,6 @@ public class Game2 {
             //We have 2 threads ready to be picked out and played
             if(readyPlayers.size() >= 2) {
                 try {
-//                    int firstIndex = random.nextInt(numPlayers);
-//                    int secondIndex = random.nextInt(numPlayers);
-//
-//                    while(secondIndex == firstIndex) {
-//                        secondIndex = random.nextInt(numPlayers);
-//                    }
-//
-//                    RPSThreadGame2 firstPlayer = (RPSThreadGame2) readyPlayers.toArray()[firstIndex];
-//                    RPSThreadGame2 secondPlayer = (RPSThreadGame2) readyPlayers.toArray()[secondIndex];
-//
-//                    readyPlayers.remove(firstPlayer);
-//                    readyPlayers.remove(secondPlayer);
-
                     RPSThreadGame2 firstPlayer = readyPlayers.take();
                     RPSThreadGame2 secondPlayer = readyPlayers.take();
 

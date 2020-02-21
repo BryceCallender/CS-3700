@@ -9,11 +9,17 @@ public class DeclarationOfIndependenceMain {
             StringBuilder wholeFile = new StringBuilder();
             String line;
             while((line = fileReader.readLine()) != null) {
-                wholeFile.append(line);
+                System.out.println(line);
+                line = line.replaceAll("\\p{Punct}", "");
+                wholeFile.append(line).append("\n ");
             }
 
             String[] words = wholeFile.toString().split(" ");
             for(int i = words.length - 1; i >= 0; i--) {
+                System.out.println(words[i]);
+                if(i == words.length - 1) {
+                    words[i] = words[i].replace("\n", "");
+                }
                 outputFile.write(words[i] + " ");
             }
 

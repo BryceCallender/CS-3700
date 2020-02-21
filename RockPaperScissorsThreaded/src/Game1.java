@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 public class Game1 {
-    public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Please Enter the amount of players: ");
@@ -21,7 +21,7 @@ public class Game1 {
 
         long start = System.currentTimeMillis();
         do {
-            CyclicBarrier cyclicBarrier = new CyclicBarrier(numPlayers + 1);
+            CyclicBarrier cyclicBarrier = new CyclicBarrier(numPlayers, new WinnerThread2(players));
             players.clear();
 
             System.out.println("----------------BEGINNING A RPS SESSION----------------");
@@ -31,19 +31,7 @@ public class Game1 {
                 RPSThread2 rpsThread = new RPSThread2(i, cyclicBarrier);
                 players.add(rpsThread);
 
-                threadPool.submit(rpsThread);
-            }
-
-            while(cyclicBarrier.await() != 0) {
-                System.out.println("All done");
-            }
-
-            try {
-                WinnerThread2 winnerThread = new WinnerThread2(players);
-                winnerThread.start();
-                winnerThread.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                threadPool.execute(rpsThread);
             }
 
             numPlayers--; //A player HAS to be removed so just decrement
