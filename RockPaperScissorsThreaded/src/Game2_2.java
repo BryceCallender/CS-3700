@@ -1,11 +1,10 @@
-import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Game2 {
+public class Game2_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

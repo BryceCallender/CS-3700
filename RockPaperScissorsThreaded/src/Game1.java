@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Game1 {
     public static void main(String[] args) {
@@ -19,19 +20,33 @@ public class Game1 {
 
         ExecutorService threadPool = Executors.newFixedThreadPool(coreCount);
 
+        AtomicInteger numThreadsReady;
+
         long start = System.currentTimeMillis();
         do {
-            CyclicBarrier cyclicBarrier = new CyclicBarrier(numPlayers, new WinnerThread2(players));
             players.clear();
+            numThreadsReady = new AtomicInteger(0);
 
             System.out.println("----------------BEGINNING A RPS SESSION----------------");
 
             //Pick the gestures for the round
             for (int i = 0; i < numPlayers; i++) {
-                RPSThread2 rpsThread = new RPSThread2(i, cyclicBarrier);
+                RPSThread2 rpsThread = new RPSThread2(i, numThreadsReady);
                 players.add(rpsThread);
 
                 threadPool.execute(rpsThread);
+            }
+
+            while(numThreadsReady.get() != numPlayers) {
+
+            }
+
+            try {
+                WinnerThread2 winnerThread = new WinnerThread2(players);
+                winnerThread.start();
+                winnerThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
 
             numPlayers--; //A player HAS to be removed so just decrement
