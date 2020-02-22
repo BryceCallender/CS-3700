@@ -28,6 +28,8 @@ public class DeclarationOfIndependenceMultiThreaded {
 
             coreRanges.forEach((coreCount) -> {
                 try {
+                    long startTime = System.nanoTime();
+
                     FileWriter outputFile = new FileWriter(coreCount + "thread_multithreaded_backwards_independence.txt", true);
                     ExecutorService threadPool = Executors.newFixedThreadPool(coreCount);
 
@@ -35,10 +37,10 @@ public class DeclarationOfIndependenceMultiThreaded {
 
                     int lineCount = wholeFile.toString().split(" newline ").length;
                     for (int i = 0; i < coreCount; i++) {
-                        int start = i *  Math.floorDiv(lineCount, coreCount);
+                        int start = i * Math.floorDiv(lineCount, coreCount);
                         int end = start + Math.floorDiv(lineCount, coreCount);
 
-                        System.out.format("Start: %d, End: %d%n" ,start,end);
+//                        System.out.format("Start: %d, End: %d%n" ,start,end);
 
                         reverseStringTasks.add(threadPool.submit(new CallableStringParser(wholeFile.toString(), start, end)));
                     }
@@ -46,21 +48,20 @@ public class DeclarationOfIndependenceMultiThreaded {
                     for(int i = reverseStringTasks.size() - 1; i >= 0; i--) {
                         try {
                             String fileData = reverseStringTasks.get(i).get();
-//                            System.out.println(fileData);
                             outputContentToFile(outputFile, fileData);
-//                          System.out.println(reverseStringTasks.get(i).get());
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         } catch (ExecutionException e) {
                             e.printStackTrace();
                         }
-//                        catch (IOException e) {
-
-//                        }
                     }
 
                     outputFile.close();
                     threadPool.shutdown();
+
+                    long endTime = System.nanoTime();
+
+                    System.out.format("It took %d cores %dns to reverse the text%n", coreCount, (endTime - startTime));
 
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
@@ -74,8 +75,6 @@ public class DeclarationOfIndependenceMultiThreaded {
     }
 
     private static synchronized void outputContentToFile(FileWriter outputFile, String data) {
-        System.out.println("-----------------WRITING TO FILE--------------------");
-        System.out.println(data);
         try {
             outputFile.write(data);
         } catch (IOException e) {

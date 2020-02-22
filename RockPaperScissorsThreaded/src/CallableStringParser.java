@@ -21,15 +21,18 @@ public class CallableStringParser implements Callable<String> {
         }
 
         //System.out.println("--------------I am responsible for these lines-------------");
-        for(int i = end; i >= start; i--) {
-            //System.out.println(words[i]);
+        for(int i = end; i > start; i--) {
             String[] splitWords = words[i].split("\\s+");
             for(int j = splitWords.length - 1; j >= 0; j--) {
-                reversedString.append(splitWords[j] + " ");
+                reversedString.append(splitWords[j]).append(" ");
             }
             reversedString.append("\n");
         }
         //System.out.println("-----------------------------------------------------------");
+
+        if(start == 0) {
+            reversedString.append(words[0]);
+        }
 
         return reversedString.toString();
     }
