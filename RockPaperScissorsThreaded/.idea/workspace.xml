@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fa67610-e4cf-46e8-9d63-ca34f93751f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game1Memoized.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game1_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RPSThread2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WinnerThread2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WinnerThreadMemoized.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/1thread_backwards_independence.txt" beforeDir="false" afterPath="$PROJECT_DIR$/1thread_backwards_independence.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DeclarationOfIndependenceMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeclarationOfIndependenceMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CallableStringParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CallableStringParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeclarationOfIndependenceMultiThreaded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeclarationOfIndependenceMultiThreaded.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +178,7 @@
       <workItem from="1582224240147" duration="1624000" />
       <workItem from="1582237515730" duration="14345000" />
       <workItem from="1582264496320" duration="6076000" />
+      <workItem from="1582305252833" duration="2807000" />
     </task>
     <servers />
   </component>
@@ -201,26 +198,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="440" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1582071131496" />
-    <state width="1254" height="344" key="GridCell.Tab.0.bottom" timestamp="1582271477950">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="315" key="GridCell.Tab.0.bottom" timestamp="1582308244124">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1254" height="344" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582271477950" />
-    <state width="1636" height="322" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1582225868376" />
-    <state width="1254" height="344" key="GridCell.Tab.0.center" timestamp="1582271477950">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="315" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
+    <state width="1636" height="315" key="GridCell.Tab.0.center" timestamp="1582308244124">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1254" height="344" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582271477950" />
-    <state width="1636" height="322" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1582225868376" />
-    <state width="1254" height="344" key="GridCell.Tab.0.left" timestamp="1582271477950">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="315" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
+    <state width="1636" height="315" key="GridCell.Tab.0.left" timestamp="1582308244124">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1254" height="344" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582271477950" />
-    <state width="1636" height="322" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1582225868375" />
-    <state width="1254" height="344" key="GridCell.Tab.0.right" timestamp="1582271477950">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="315" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
+    <state width="1636" height="315" key="GridCell.Tab.0.right" timestamp="1582308244124">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1254" height="344" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582271477950" />
-    <state width="1636" height="322" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1582225868376" />
+    <state width="1636" height="315" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
     <state width="1254" height="344" key="GridCell.Tab.1.bottom" timestamp="1582271477950">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -241,9 +238,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="657" height="703" key="XDebugger.FullValuePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1582269378116" />
-    <state x="164" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1582224292270">
+    <state x="164" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1582305252672">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
-    <state x="164" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1582224292270" />
+    <state x="164" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1582305252672" />
   </component>
 </project>

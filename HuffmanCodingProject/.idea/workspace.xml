@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="031deb15-1826-4b0b-a81b-e79a66d985a1" name="Default Changelist" comment="" />
+    <list default="true" id="031deb15-1826-4b0b-a81b-e79a66d985a1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed_constitution.txt" beforeDir="false" afterPath="$PROJECT_DIR$/compressed_constitution.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HuffmanEncoding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HuffmanEncoding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/1thread_backwards_independence.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/1thread_backwards_independence.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/1thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/2thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/3thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/4thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/src/CallableStringParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/src/CallableStringParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/src/DeclarationOfIndependenceMultiThreaded.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/src/DeclarationOfIndependenceMultiThreaded.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,6 +130,10 @@
       <workItem from="1582080199951" duration="4223000" />
       <workItem from="1582163128161" duration="240000" />
       <workItem from="1582237482096" duration="27000" />
+      <workItem from="1582311940785" duration="63000" />
+      <workItem from="1582312156980" duration="182000" />
+      <workItem from="1582312428938" duration="674000" />
+      <workItem from="1582313870698" duration="107000" />
     </task>
     <servers />
   </component>
@@ -130,22 +149,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="508" y="588" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1582071194128" />
-    <state width="1248" height="399" key="GridCell.Tab.0.bottom" timestamp="1582085841028">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="384" key="GridCell.Tab.0.bottom" timestamp="1582313977837">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1248" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582085841028" />
-    <state width="1248" height="399" key="GridCell.Tab.0.center" timestamp="1582085841027">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="384" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1582313977837" />
+    <state width="1636" height="384" key="GridCell.Tab.0.center" timestamp="1582313977836">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1248" height="399" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582085841027" />
-    <state width="1248" height="399" key="GridCell.Tab.0.left" timestamp="1582085841027">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="384" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1582313977836" />
+    <state width="1636" height="384" key="GridCell.Tab.0.left" timestamp="1582313977836">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1248" height="399" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582085841027" />
-    <state width="1248" height="399" key="GridCell.Tab.0.right" timestamp="1582085841027">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="384" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1582313977836" />
+    <state width="1636" height="384" key="GridCell.Tab.0.right" timestamp="1582313977836">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1248" height="399" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582085841027" />
+    <state width="1636" height="384" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1582313977836" />
     <state width="1248" height="403" key="GridCell.Tab.1.bottom" timestamp="1582085841024">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -162,12 +185,21 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1248" height="403" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582085841024" />
-    <state x="164" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1582163128138">
+    <state x="164" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1582313870641">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
-    <state x="164" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1582163128138" />
+    <state x="164" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1582313870641" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="this" />

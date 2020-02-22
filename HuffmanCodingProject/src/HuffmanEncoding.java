@@ -48,6 +48,10 @@ public class HuffmanEncoding {
             }
 
             for (Map.Entry<Character,Integer> entry: frequencyMap.entrySet()) {
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+
+            for (Map.Entry<Character,Integer> entry: frequencyMap.entrySet()) {
                 HuffmanNode huffmanNode = new HuffmanNode();
 
                 huffmanNode.character = entry.getKey();

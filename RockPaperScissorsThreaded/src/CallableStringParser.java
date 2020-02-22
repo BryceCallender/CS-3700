@@ -20,12 +20,16 @@ public class CallableStringParser implements Callable<String> {
             end = words.length - 1;
         }
 
-        System.out.println("--------------I am responsible for these lines-------------");
+        //System.out.println("--------------I am responsible for these lines-------------");
         for(int i = end; i >= start; i--) {
             //System.out.println(words[i]);
-            //reversedString.append("\n");
+            String[] splitWords = words[i].split("\\s+");
+            for(int j = splitWords.length - 1; j >= 0; j--) {
+                reversedString.append(splitWords[j] + " ");
+            }
+            reversedString.append("\n");
         }
-        System.out.println("-----------------------------------------------------------");
+        //System.out.println("-----------------------------------------------------------");
 
         return reversedString.toString();
     }
