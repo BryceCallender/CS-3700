@@ -1,8 +1,5 @@
 import java.util.Scanner;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class Game2_2 {
     public static void main(String[] args) {
@@ -21,51 +18,57 @@ public class Game2_2 {
         ExecutorService threadPool = Executors.newFixedThreadPool(coreCount);
 
         //Responsible for grabbing 2 threads to play against each other
-        BlockingQueue<RPSThreadGame2> readyPlayers = new ArrayBlockingQueue<>(numPlayers);
-
-        long start = System.currentTimeMillis();
-        for(int i = 0; i < numPlayers; i++) {
-            RPSThreadGame2 rpsThread = new RPSThreadGame2(readyPlayers);
-            threadPool.execute(rpsThread);
+        BlockingQueue<RPSThread2Game2> readyPlayers = new ArrayBlockingQueue<>(numPlayers);
+        CyclicBarrier barrier = new CyclicBarrier(2, () -> {
             try {
-                readyPlayers.put(rpsThread);
+                if(readyPlayers.size() == 1) {
+                    System.out.println(readyPlayers.peek().name + " is the victor of the tournament!!!");
+                    //System.out.println("It took a total of " + (end-start) + "ms...");
+                }
+
+                RPSThread2Game2 firstPlayer = readyPlayers.take();
+                RPSThread2Game2 secondPlayer = readyPlayers.take();
+
+                System.out.println(firstPlayer.name + " vs " + secondPlayer.name);
+                RPSThread2Game2 winner = calculateWinner(firstPlayer, secondPlayer);
+
+                System.out.println(winner.name + " is victorious... Adding to the back of the queue");
+
+                addPlayerAndAwait(readyPlayers, winner);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        });
+
+        long start = System.currentTimeMillis();
+
+        for(int i = 0; i < numPlayers; i++) {
+            RPSThread2Game2 rpsThread = new RPSThread2Game2(i, readyPlayers, barrier);
+            threadPool.execute(rpsThread);
         }
-
-        do {
-            //We have 2 threads ready to be picked out and played
-            if(readyPlayers.size() >= 2) {
-                try {
-                    RPSThreadGame2 firstPlayer = readyPlayers.take();
-                    RPSThreadGame2 secondPlayer = readyPlayers.take();
-
-                    System.out.println(firstPlayer.name + " vs " + secondPlayer.name);
-                    RPSThreadGame2 winner = calculateWinner(firstPlayer, secondPlayer);
-
-                    System.out.println(winner.name + " is victorious... Adding to the back of the queue");
-
-                    readyPlayers.put(winner);
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }while(readyPlayers.size() > 1);
 
         long end = System.currentTimeMillis();
 
         System.out.println("\n\n------------------------END GAME------------------------");
-        assert readyPlayers.peek() != null;
-        System.out.println(readyPlayers.peek().name + " is the victor of the tournament!!!");
+//        assert readyPlayers.peek() != null;
+//        System.out.println(readyPlayers.peek().name + " is the victor of the tournament!!!");
         System.out.println("It took a total of " + (end-start) + "ms...");
 
         threadPool.shutdown();
     }
 
+    public static void addPlayerAndAwait(BlockingQueue<RPSThread2Game2> readyPlayers, RPSThread2Game2 winner) {
+        try {
+            readyPlayers.put(winner);
+            System.out.println("there are " + winner.barrier.getNumberWaiting() + " waiting");
+            winner.awaitOpponent();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
-    public static RPSThreadGame2 calculateWinner(RPSThreadGame2 myself, RPSThreadGame2 opponent) {
+
+    public static RPSThread2Game2 calculateWinner(RPSThread2Game2 myself, RPSThread2Game2 opponent) {
         if(myself.handGesture.equals(opponent.handGesture)) {
             boolean sameGesture = true;
             while(sameGesture) {

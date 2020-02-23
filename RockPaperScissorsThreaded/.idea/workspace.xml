@@ -65,7 +65,7 @@
       <recent name="C:\Users\bryce\Desktop\CS-3700\RockPaperScissorsThreaded" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DeclarationOfIndependenceMultiThreaded">
+  <component name="RunManager" selected="Application.Game2_2">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
       <option name="WIDTH" value="400" />
@@ -97,16 +97,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Game1Memoized" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game1Memoized" />
+    <configuration name="Game2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game2" />
       <module name="RockPaperScissorsThreaded" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Game2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game2" />
+    <configuration name="Game2_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game2_2" />
       <module name="RockPaperScissorsThreaded" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -146,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Game2_2" />
+        <item itemvalue="Application.Game2" />
         <item itemvalue="Application.DeclarationOfIndependenceMultiThreaded" />
         <item itemvalue="Application.DeclarationOfIndependenceMain" />
-        <item itemvalue="Application.Game2" />
         <item itemvalue="Application.Game1" />
-        <item itemvalue="Application.Game1Memoized" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +179,8 @@
       <workItem from="1582237515730" duration="14345000" />
       <workItem from="1582264496320" duration="6076000" />
       <workItem from="1582305252833" duration="2807000" />
-      <workItem from="1582336669413" duration="4538000" />
+      <workItem from="1582336669413" duration="5213000" />
+      <workItem from="1582393888808" duration="6002000" />
     </task>
     <servers />
   </component>
@@ -199,42 +200,42 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="440" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1582071131496" />
-    <state width="1253" height="485" key="GridCell.Tab.0.bottom" timestamp="1582340908653">
+    <state width="1257" height="485" key="GridCell.Tab.0.bottom" timestamp="1582399900575">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1253" height="485" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582340908653" />
+    <state width="1257" height="485" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900575" />
     <state width="1636" height="315" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
-    <state width="1253" height="485" key="GridCell.Tab.0.center" timestamp="1582340908653">
+    <state width="1257" height="485" key="GridCell.Tab.0.center" timestamp="1582399900575">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1253" height="485" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582340908653" />
+    <state width="1257" height="485" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900575" />
     <state width="1636" height="315" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
-    <state width="1253" height="485" key="GridCell.Tab.0.left" timestamp="1582340908653">
+    <state width="1257" height="485" key="GridCell.Tab.0.left" timestamp="1582399900575">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1253" height="485" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582340908653" />
+    <state width="1257" height="485" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900575" />
     <state width="1636" height="315" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
-    <state width="1253" height="485" key="GridCell.Tab.0.right" timestamp="1582340908653">
+    <state width="1257" height="485" key="GridCell.Tab.0.right" timestamp="1582399900575">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1253" height="485" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582340908653" />
+    <state width="1257" height="485" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900575" />
     <state width="1636" height="315" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
-    <state width="1253" height="474" key="GridCell.Tab.1.bottom" timestamp="1582339178194">
+    <state width="1257" height="360" key="GridCell.Tab.1.bottom" timestamp="1582399900570">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1253" height="474" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582339178194" />
-    <state width="1253" height="474" key="GridCell.Tab.1.center" timestamp="1582339178194">
+    <state width="1257" height="360" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900570" />
+    <state width="1257" height="360" key="GridCell.Tab.1.center" timestamp="1582399900570">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1253" height="474" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582339178194" />
-    <state width="1253" height="474" key="GridCell.Tab.1.left" timestamp="1582339178194">
+    <state width="1257" height="360" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900570" />
+    <state width="1257" height="360" key="GridCell.Tab.1.left" timestamp="1582399900569">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1253" height="474" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582339178194" />
-    <state width="1253" height="474" key="GridCell.Tab.1.right" timestamp="1582339178194">
+    <state width="1257" height="360" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900569" />
+    <state width="1257" height="360" key="GridCell.Tab.1.right" timestamp="1582399900570">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1253" height="474" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582339178194" />
+    <state width="1257" height="360" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900570" />
     <state width="657" height="703" key="XDebugger.FullValuePopup" timestamp="1582269378116">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
