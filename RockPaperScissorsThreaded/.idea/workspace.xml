@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fa67610-e4cf-46e8-9d63-ca34f93751f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/WinnerBarrierAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1thread_backwards_independence.txt" beforeDir="false" afterPath="$PROJECT_DIR$/1thread_backwards_independence.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1thread_multithreaded_backwards_independence.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2thread_multithreaded_backwards_independence.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/3thread_multithreaded_backwards_independence.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/4thread_multithreaded_backwards_independence.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CallableStringParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CallableStringParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DeclarationOfIndependenceMultiThreaded.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeclarationOfIndependenceMultiThreaded.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game2_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game2_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RPSThread2Game2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RPSThread2Game2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +177,7 @@
       <workItem from="1582305252833" duration="2807000" />
       <workItem from="1582336669413" duration="5213000" />
       <workItem from="1582393888808" duration="6002000" />
+      <workItem from="1582586238460" duration="1231000" />
     </task>
     <servers />
   </component>
@@ -188,6 +185,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="652" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1582587053118">
+      <screen x="0" y="23" width="1680" height="954" />
+    </state>
+    <state x="652" y="215" key="#com.intellij.ide.util.MemberChooser/0.23.1680.954@0.23.1680.954" timestamp="1582587053118" />
     <state x="499" y="592" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582001737298">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -200,26 +201,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="440" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1582071131496" />
-    <state width="1257" height="485" key="GridCell.Tab.0.bottom" timestamp="1582399900575">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="387" key="GridCell.Tab.0.bottom" timestamp="1582590339936">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1257" height="485" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900575" />
-    <state width="1636" height="315" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
-    <state width="1257" height="485" key="GridCell.Tab.0.center" timestamp="1582399900575">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="387" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1582590339936" />
+    <state width="1636" height="387" key="GridCell.Tab.0.center" timestamp="1582590339935">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1257" height="485" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900575" />
-    <state width="1636" height="315" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
-    <state width="1257" height="485" key="GridCell.Tab.0.left" timestamp="1582399900575">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="387" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1582590339935" />
+    <state width="1636" height="387" key="GridCell.Tab.0.left" timestamp="1582590339935">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1257" height="485" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900575" />
-    <state width="1636" height="315" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
-    <state width="1257" height="485" key="GridCell.Tab.0.right" timestamp="1582399900575">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="387" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1582590339935" />
+    <state width="1636" height="387" key="GridCell.Tab.0.right" timestamp="1582590339935">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1257" height="485" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582399900575" />
-    <state width="1636" height="315" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1582308244124" />
+    <state width="1636" height="387" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1582590339935" />
     <state width="1257" height="360" key="GridCell.Tab.1.bottom" timestamp="1582399900570">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -240,9 +241,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="657" height="703" key="XDebugger.FullValuePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1582269378116" />
-    <state x="164" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1582305252672">
+    <state x="164" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1582586237852">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
-    <state x="164" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1582305252672" />
+    <state x="164" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1582586237852" />
   </component>
 </project>

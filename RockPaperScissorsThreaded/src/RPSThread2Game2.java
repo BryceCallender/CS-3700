@@ -8,13 +8,13 @@ public class RPSThread2Game2 implements Runnable {
 
     String name;
     String handGesture;
-    BlockingQueue<RPSThread2Game2> rpsQueue;
+//    BlockingQueue<RPSThread2Game2> rpsQueue;
     CyclicBarrier barrier;
 
 
-    RPSThread2Game2(int index, BlockingQueue<RPSThread2Game2> rpsQueue, CyclicBarrier barrier) {
+    RPSThread2Game2(int index, CyclicBarrier barrier) {
         name = "Thread" + index;
-        this.rpsQueue = rpsQueue;
+//        this.rpsQueue = rpsQueue;
         this.barrier = barrier;
     }
 
@@ -27,7 +27,7 @@ public class RPSThread2Game2 implements Runnable {
         System.out.println(name + ": used " + handGesture);
 
         try {
-            rpsQueue.put(this);
+//            rpsQueue.put(this);
             System.out.println(name + " is waiting at the barrier...");
             barrier.await();
         } catch (InterruptedException | BrokenBarrierException e) {
