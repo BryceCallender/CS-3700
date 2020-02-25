@@ -1,25 +1,29 @@
-import java.util.ArrayList;
+import java.util.concurrent.BlockingQueue;
 
 public class WinnerBarrierAction implements Runnable {
-    ArrayList<RPSThread2Game2> readyPlayers;
+    BlockingQueue<RPSThread2Game2> readyPlayers;
 
-    WinnerBarrierAction(ArrayList<RPSThread2Game2> readyPlayers) {
+    WinnerBarrierAction(BlockingQueue<RPSThread2Game2> readyPlayers) {
         this.readyPlayers = readyPlayers;
     }
 
     @Override
     public void run() {
-        System.out.println("Barrier has been triggered");
+        while(readyPlayers.size() > 1) {
+            try {
+                RPSThread2Game2 firstPlayer = readyPlayers.take();
+                RPSThread2Game2 secondPlayer = readyPlayers.take();
 
-        RPSThread2Game2 firstPlayer = readyPlayers.get(0);
-        RPSThread2Game2 secondPlayer = readyPlayers.get(1);
+                System.out.println(firstPlayer.name + " vs " + secondPlayer.name);
+                RPSThread2Game2 winner = calculateWinner(firstPlayer, secondPlayer);
 
-        System.out.println(firstPlayer.name + " vs " + secondPlayer.name);
-        RPSThread2Game2 winner = calculateWinner(firstPlayer, secondPlayer);
+                System.out.println(winner.name + " is victorious... Adding to the back of the queue");
 
-        System.out.println(winner.name + " is victorious... Adding to the back of the queue");
-
-        addPlayerAndAwait(readyPlayers, winner);
+                addPlayerAndAwait(readyPlayers, winner);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public RPSThread2Game2 calculateWinner(RPSThread2Game2 myself, RPSThread2Game2 opponent) {
@@ -67,8 +71,11 @@ public class WinnerBarrierAction implements Runnable {
         return myself;
     }
 
-    public static void addPlayerAndAwait(ArrayList<RPSThread2Game2> readyPlayers, RPSThread2Game2 winner) {
-        readyPlayers.add(winner);
-        winner.awaitOpponent();
+    public void addPlayerAndAwait(BlockingQueue<RPSThread2Game2> readyPlayers, RPSThread2Game2 winner) {
+        try {
+            readyPlayers.put(winner);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

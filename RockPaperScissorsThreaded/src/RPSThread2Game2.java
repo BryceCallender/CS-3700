@@ -1,21 +1,18 @@
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.*;
 
 public class RPSThread2Game2 implements Runnable {
     String[] values = {"Rock", "Paper", "Scissors"};
 
     String name;
     String handGesture;
-//    BlockingQueue<RPSThread2Game2> rpsQueue;
-    CyclicBarrier barrier;
+    BlockingQueue<RPSThread2Game2> rpsQueue;
 
+    CountDownLatch countDownLatch;
 
-    RPSThread2Game2(int index, CyclicBarrier barrier) {
+    RPSThread2Game2(int index, BlockingQueue<RPSThread2Game2> rpsQueue, CountDownLatch countDownLatch) {
         name = "Thread" + index;
-//        this.rpsQueue = rpsQueue;
-        this.barrier = barrier;
+        this.rpsQueue = rpsQueue;
+        this.countDownLatch = countDownLatch;
     }
 
     @Override
@@ -27,10 +24,10 @@ public class RPSThread2Game2 implements Runnable {
         System.out.println(name + ": used " + handGesture);
 
         try {
-//            rpsQueue.put(this);
-            System.out.println(name + " is waiting at the barrier...");
-            barrier.await();
-        } catch (InterruptedException | BrokenBarrierException e) {
+            rpsQueue.put(this);
+            countDownLatch.countDown();
+            System.out.println("Counted down");
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
@@ -41,16 +38,5 @@ public class RPSThread2Game2 implements Runnable {
         handGesture = values[randomPick];
 
         System.out.println(name + ": retried and got " + handGesture);
-    }
-
-    public void awaitOpponent() {
-        try {
-            System.out.println(name + " is waiting at the barrier for an opponent after winning...");
-            barrier.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (BrokenBarrierException e) {
-            e.printStackTrace();
-        }
     }
 }
