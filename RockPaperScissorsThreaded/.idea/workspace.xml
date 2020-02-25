@@ -61,7 +61,7 @@
       <recent name="C:\Users\bryce\Desktop\CS-3700\RockPaperScissorsThreaded" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Game2_2">
+  <component name="RunManager" selected="Application.Game2">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
       <option name="WIDTH" value="400" />
@@ -85,14 +85,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Game1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game1" />
-      <module name="RockPaperScissorsThreaded" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Game2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game2" />
       <module name="RockPaperScissorsThreaded" />
@@ -103,6 +95,14 @@
     </configuration>
     <configuration name="Game2_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game2_2" />
+      <module name="RockPaperScissorsThreaded" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game2_Future" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game2_Future" />
       <module name="RockPaperScissorsThreaded" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -142,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Game2_2" />
         <item itemvalue="Application.Game2" />
+        <item itemvalue="Application.Game2_Future" />
+        <item itemvalue="Application.Game2_2" />
         <item itemvalue="Application.DeclarationOfIndependenceMultiThreaded" />
         <item itemvalue="Application.DeclarationOfIndependenceMain" />
-        <item itemvalue="Application.Game1" />
       </list>
     </recent_temporary>
   </component>
@@ -179,6 +179,7 @@
       <workItem from="1582393888808" duration="6002000" />
       <workItem from="1582586238460" duration="1231000" />
       <workItem from="1582590705465" duration="10567000" />
+      <workItem from="1582602481171" duration="2625000" />
     </task>
     <servers />
   </component>
@@ -202,25 +203,25 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="440" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1582071131496" />
-    <state width="1255" height="360" key="GridCell.Tab.0.bottom" timestamp="1582602163747">
+    <state width="1252" height="485" key="GridCell.Tab.0.bottom" timestamp="1582605108423">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1255" height="360" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582602163747" />
+    <state width="1252" height="485" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1582605108423" />
     <state width="1636" height="387" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1582590339936" />
-    <state width="1255" height="360" key="GridCell.Tab.0.center" timestamp="1582602163747">
+    <state width="1252" height="485" key="GridCell.Tab.0.center" timestamp="1582605108423">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1255" height="360" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582602163747" />
+    <state width="1252" height="485" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1582605108423" />
     <state width="1636" height="387" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1582590339935" />
-    <state width="1255" height="360" key="GridCell.Tab.0.left" timestamp="1582602163746">
+    <state width="1252" height="485" key="GridCell.Tab.0.left" timestamp="1582605108423">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1255" height="360" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582602163746" />
+    <state width="1252" height="485" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1582605108423" />
     <state width="1636" height="387" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1582590339935" />
-    <state width="1255" height="360" key="GridCell.Tab.0.right" timestamp="1582602163747">
+    <state width="1252" height="485" key="GridCell.Tab.0.right" timestamp="1582605108423">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1255" height="360" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582602163747" />
+    <state width="1252" height="485" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1582605108423" />
     <state width="1636" height="387" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1582590339935" />
     <state width="1255" height="360" key="GridCell.Tab.1.bottom" timestamp="1582602163747">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -246,5 +247,13 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="164" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1582586237852" />
+    <state x="313" y="334" key="run.anything.popup" timestamp="1582603410938">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="313" y="334" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1582603410938" />
+    <state x="320" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1582602870573">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="320" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1582602870573" />
   </component>
 </project>
