@@ -1,36 +1,27 @@
 import java.io.*;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
+import java.util.concurrent.*;
 
-class HuffmanNode {
-    int frequency;
-    char character;
-
-    HuffmanNode leftChild;
-    HuffmanNode rightChild;
-}
-
-class HuffmanComparator implements Comparator<HuffmanNode> {
-    @Override
-    public int compare(HuffmanNode huffmanNode1, HuffmanNode huffmanNode2) {
-        return Integer.compare(huffmanNode1.frequency, huffmanNode2.frequency);
-    }
-}
-
-public class HuffmanEncoding {
+public class ParallelHuffmanEncoding {
     private File file;
     private Map<Character, Integer> frequencyMap;
     private Map<Character, String> binaryRepresentations;
 
-    PriorityQueue<HuffmanNode> priorityQueue;
+    private String fileData;
+    private ExecutorService threadPool;
+    private int coreCount;
 
-    HuffmanEncoding(File file) {
+    private PriorityQueue<HuffmanNode> priorityQueue;
+
+    ParallelHuffmanEncoding(File file) {
         this.file = file;
-        frequencyMap = new HashMap<>();
+        frequencyMap = new ConcurrentHashMap<>();
         priorityQueue = new PriorityQueue<>(1, new HuffmanComparator());
         binaryRepresentations = new HashMap<>();
+
+        coreCount = Runtime.getRuntime().availableProcessors();
+
+        threadPool = Executors.newFixedThreadPool(coreCount);
     }
 
     public void createHuffmanTree() throws IOException {
@@ -38,16 +29,37 @@ public class HuffmanEncoding {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 
             long start = System.currentTimeMillis();
-            int c;
-            while((c = bufferedReader.read()) != -1) {
-                Character character = (char) c;
-                if(!frequencyMap.containsKey(character)) {
-                    frequencyMap.put(character, 1);
-                }else {
-                    frequencyMap.put(character, frequencyMap.get(character) + 1);
-                }
+            StringBuilder fileContents = new StringBuilder();
+            String line;
+            while((line = bufferedReader.readLine()) != null) {
+                fileContents.append(line).append('\n');
             }
+
+
+            List<Future<?>> future = new ArrayList<>();
+
+            int fileLength = fileContents.length();
+            fileData = fileContents.toString();
+
+            for(int i = 0; i < coreCount; i++) {
+                int startLine = i * Math.floorDiv(fileLength, coreCount);
+                int endLine = startLine + Math.floorDiv(fileLength, coreCount);
+
+                //System.out.printf("Start: %d End: %d%n", startLine, endLine);
+
+                HuffmanFrequencyThread freqCalc = new HuffmanFrequencyThread(frequencyMap, fileData, startLine, endLine);
+                future.add(threadPool.submit(freqCalc));
+            }
+
             long end = System.currentTimeMillis();
+
+            future.forEach((value) -> {
+                try {
+                    value.get();
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+            });
 
             System.out.println("It took " + (end-start) + "ms to create the frequency map");
 
@@ -96,17 +108,26 @@ public class HuffmanEncoding {
 
     public File encodeFile() {
         long start = System.currentTimeMillis();
-        File outputFile = new File("compressed_constitution.txt");
-        StringBuilder string = new StringBuilder();
+        File outputFile = new File("compressed_constitution_multithread.txt");
+        List<Future<String>> futures = new ArrayList<>();
         try {
             FileWriter fileWriter = new FileWriter(outputFile);
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 
-            int c;
-            while((c = bufferedReader.read()) != -1) {
-                Character character = (char) c;
-                fileWriter.write(binaryRepresentations.get(character));
-                string.append(binaryRepresentations.get(character));
+            for(int i = 0; i < coreCount; i++) {
+                int startLine = i * Math.floorDiv(fileData.length(), coreCount);
+                int endLine = startLine + Math.floorDiv(fileData.length(), coreCount);
+
+                //System.out.printf("Start: %d End: %d%n", startLine, endLine);
+
+                futures.add(threadPool.submit(new CallableEncoder(binaryRepresentations, fileData, startLine, endLine)));
+            }
+
+            for (Future<String> future: futures) {
+                try {
+                    fileWriter.write(future.get());
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
             }
 
             fileWriter.close();
@@ -114,15 +135,28 @@ public class HuffmanEncoding {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        long end = System.currentTimeMillis();
+        threadPool.shutdown();
 
+        long end = System.currentTimeMillis();
         System.out.println("It took " + (end-start) + "ms to encode the file");
 
         return outputFile;
     }
 
+    private void generateBinaryCodes(HuffmanNode root, String binary) {
+        if(root == null) {
+            return;
+        }
+
+        if(root.character != '_') {
+            binaryRepresentations.put(root.character, binary);
+        }
+        generateBinaryCodes(root.leftChild, binary + "0");
+        generateBinaryCodes(root.rightChild, binary + "1");
+    }
+
     public void decodeFile() {
-        File fileToRead = new File("compressed_constitution.txt");
+        File fileToRead = new File("compressed_constitution_multithread.txt");
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileToRead));
             HuffmanNode current = priorityQueue.peek();
@@ -146,18 +180,6 @@ public class HuffmanEncoding {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private void generateBinaryCodes(HuffmanNode root, String binary) {
-        if(root == null) {
-            return;
-        }
-
-        if(root.character != '_') {
-            binaryRepresentations.put(root.character, binary);
-        }
-        generateBinaryCodes(root.leftChild, binary + "0");
-        generateBinaryCodes(root.rightChild, binary + "1");
     }
 
 }

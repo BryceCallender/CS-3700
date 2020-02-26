@@ -13,9 +13,16 @@ public class Main {
         huffmanEncoding.createHuffmanTree();
         File newFile = huffmanEncoding.encodeFile();
 
+        huffmanEncoding.decodeFile();
+
+        ParallelHuffmanEncoding parallelHuffmanEncoding = new ParallelHuffmanEncoding(constitutionFile);
+
+        parallelHuffmanEncoding.createHuffmanTree();
+        parallelHuffmanEncoding.encodeFile();
+
+        parallelHuffmanEncoding.decodeFile();
+
         System.out.println("Constitution compressed file size: " + (newFile.length()/8.0f) + " bytes");
         System.out.println("Compressed by " + ((newFile.length() / 8.0f)/constitutionFile.length() * 100) + "%");
-
-
     }
 }
