@@ -20,23 +20,19 @@ public class Game1 {
 
         ExecutorService threadPool = Executors.newFixedThreadPool(coreCount);
 
-        AtomicInteger numThreadsReady;
+        AtomicInteger numThreadsReady = new AtomicInteger(0);
+
+        System.out.println("----------------BEGINNING A RPS SESSION----------------");
+        //Pick the gestures for the round
+        for (int i = 0; i < numPlayers; i++) {
+            RPSThread2 rpsThread = new RPSThread2(i, numThreadsReady);
+            players.add(rpsThread);
+
+            threadPool.execute(rpsThread);
+        }
 
         long start = System.currentTimeMillis();
         do {
-            players.clear();
-            numThreadsReady = new AtomicInteger(0);
-
-            System.out.println("----------------BEGINNING A RPS SESSION----------------");
-
-            //Pick the gestures for the round
-            for (int i = 0; i < numPlayers; i++) {
-                RPSThread2 rpsThread = new RPSThread2(i, numThreadsReady);
-                players.add(rpsThread);
-
-                threadPool.execute(rpsThread);
-            }
-
             while(numThreadsReady.get() != numPlayers) {
 
             }
@@ -50,6 +46,15 @@ public class Game1 {
             }
 
             numPlayers--; //A player HAS to be removed so just decrement
+
+            if(numPlayers > 1) {
+                System.out.println("----------------BEGINNING A RPS SESSION----------------");
+                numThreadsReady = new AtomicInteger(0);
+                for(RPSThread2 rpsThread: players) {
+                    rpsThread.resetCounter(numThreadsReady);
+                    threadPool.execute(rpsThread);
+                }
+            }
         }while(numPlayers > 1);
 
         long end = System.currentTimeMillis();

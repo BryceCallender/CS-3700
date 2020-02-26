@@ -27,14 +27,9 @@ public class RPSThread2 implements Runnable {
         System.out.println(name + ": used " + handGesture);
 
         counter.incrementAndGet();
+    }
 
-//        try {
-//            System.out.println(name + " is waiting for others to reach the barrier");
-//            barrier.await();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        } catch (BrokenBarrierException e) {
-//            e.printStackTrace();
-//        }
+    public void resetCounter(AtomicInteger newCounter) {
+        this.counter = newCounter;
     }
 }

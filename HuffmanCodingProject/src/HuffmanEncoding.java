@@ -55,6 +55,7 @@ public class HuffmanEncoding {
 //                System.out.println(entry.getKey() + ": " + entry.getValue());
 //            }
 
+            start = System.currentTimeMillis();
             for (Map.Entry<Character,Integer> entry: frequencyMap.entrySet()) {
                 HuffmanNode huffmanNode = new HuffmanNode();
 
@@ -81,6 +82,9 @@ public class HuffmanEncoding {
 
                 priorityQueue.add(newNode);
             }
+            end = System.currentTimeMillis();
+
+            //System.out.println("It took " + (end-start) + "ms to create the huffman tree");
 
             generateBinaryCodes(priorityQueue.peek(), "");
 

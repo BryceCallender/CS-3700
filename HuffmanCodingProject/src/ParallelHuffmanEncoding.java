@@ -1,4 +1,9 @@
 import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.channels.AsynchronousFileChannel;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -27,6 +32,22 @@ public class ParallelHuffmanEncoding {
     public void createHuffmanTree() throws IOException {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+//            Path path = Paths.get("constitution.txt");
+//            AsynchronousFileChannel asynchronousFileChannel = AsynchronousFileChannel.open(path, StandardOpenOption.READ);
+//
+//            ByteBuffer buffer = ByteBuffer.allocate((int)path.toFile().length());
+//            long position = 0;
+//
+//            Future<Integer> operation = asynchronousFileChannel.read(buffer, position);
+//
+//            while(!operation.isDone());
+//
+//            buffer.flip();
+//            byte[] data = new byte[buffer.limit()];
+//            buffer.get(data);
+//            System.out.println(new String(data));
+//            buffer.clear();
+
 
             long start = System.currentTimeMillis();
             StringBuilder fileContents = new StringBuilder();
@@ -34,7 +55,6 @@ public class ParallelHuffmanEncoding {
             while((line = bufferedReader.readLine()) != null) {
                 fileContents.append(line).append('\n');
             }
-
 
             List<Future<?>> future = new ArrayList<>();
 
@@ -51,8 +71,6 @@ public class ParallelHuffmanEncoding {
                 future.add(threadPool.submit(freqCalc));
             }
 
-            long end = System.currentTimeMillis();
-
             future.forEach((value) -> {
                 try {
                     value.get();
@@ -60,6 +78,7 @@ public class ParallelHuffmanEncoding {
                     e.printStackTrace();
                 }
             });
+            long end = System.currentTimeMillis();
 
             System.out.println("It took " + (end-start) + "ms to create the frequency map");
 
@@ -108,7 +127,7 @@ public class ParallelHuffmanEncoding {
 
     public File encodeFile() {
         long start = System.currentTimeMillis();
-        File outputFile = new File("compressed_constitution_multithread.txt");
+        File outputFile = new File("constitution_multithread.txt");
         List<Future<String>> futures = new ArrayList<>();
         try {
             FileWriter fileWriter = new FileWriter(outputFile);
