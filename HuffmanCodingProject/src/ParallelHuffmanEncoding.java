@@ -1,11 +1,12 @@
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+import java.nio.file.*;
+import java.nio.file.attribute.AttributeView;
+import java.nio.file.attribute.FileAttribute;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.stream.Stream;
 
 public class ParallelHuffmanEncoding {
     private File file;
@@ -31,60 +32,48 @@ public class ParallelHuffmanEncoding {
 
     public void createHuffmanTree() throws IOException {
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-//            Path path = Paths.get("constitution.txt");
-//            AsynchronousFileChannel asynchronousFileChannel = AsynchronousFileChannel.open(path, StandardOpenOption.READ);
-//
-//            ByteBuffer buffer = ByteBuffer.allocate((int)path.toFile().length());
-//            long position = 0;
-//
-//            Future<Integer> operation = asynchronousFileChannel.read(buffer, position);
-//
-//            while(!operation.isDone());
-//
-//            buffer.flip();
-//            byte[] data = new byte[buffer.limit()];
-//            buffer.get(data);
-//            System.out.println(new String(data));
-//            buffer.clear();
-
-
             long start = System.currentTimeMillis();
+            Path path = Paths.get("constitution.txt");
             StringBuilder fileContents = new StringBuilder();
-            String line;
-            while((line = bufferedReader.readLine()) != null) {
-                fileContents.append(line).append('\n');
-            }
 
-            List<Future<?>> future = new ArrayList<>();
+            AsynchronousFileChannel asynchronousFileChannel = AsynchronousFileChannel.open(path, EnumSet.of(StandardOpenOption.READ), threadPool);
 
-            int fileLength = fileContents.length();
-            fileData = fileContents.toString();
+            int bufferSize = (int)path.toFile().length() / coreCount + 50; // some padding from bad division offsets
 
+            List<ByteBuffer> buffers = new ArrayList<>();
+            List<Future<?>> futures = new ArrayList<>();
+            
+            long position = 0;
             for(int i = 0; i < coreCount; i++) {
-                int startLine = i * Math.floorDiv(fileLength, coreCount);
-                int endLine = startLine + Math.floorDiv(fileLength, coreCount);
-
-                //System.out.printf("Start: %d End: %d%n", startLine, endLine);
-
-                HuffmanFrequencyThread freqCalc = new HuffmanFrequencyThread(frequencyMap, fileData, startLine, endLine);
-                future.add(threadPool.submit(freqCalc));
+                ByteBuffer buffer = ByteBuffer.allocate(bufferSize);
+                futures.add(asynchronousFileChannel.read(buffer, position));
+                position += bufferSize;
+                buffers.add(buffer);
             }
 
-            future.forEach((value) -> {
-                try {
-                    value.get();
-                } catch (InterruptedException | ExecutionException e) {
-                    e.printStackTrace();
-                }
-            });
-            long end = System.currentTimeMillis();
+            for(Future<?> future: futures) {
+                future.get();
+            }
 
+            for (ByteBuffer byteBuffer: buffers) {
+                byteBuffer.flip();
+                byte[] data = new byte[byteBuffer.limit()];
+                byteBuffer.get(data);
+                fileContents.append(new String(data));
+                for (byte character: data) {
+                    char letter = (char)character;
+                    if(!frequencyMap.containsKey(letter)) {
+                        frequencyMap.put(letter, 1);
+                    }else {
+                        frequencyMap.put(letter, frequencyMap.get(letter) + 1);
+                    }
+                }
+            }
+
+            long end = System.currentTimeMillis();
             System.out.println("It took " + (end-start) + "ms to create the frequency map");
 
-//            for (Map.Entry<Character,Integer> entry: frequencyMap.entrySet()) {
-//                System.out.println(entry.getKey() + ": " + entry.getValue());
-//            }
+            fileData = fileContents.toString();
 
             for (Map.Entry<Character,Integer> entry: frequencyMap.entrySet()) {
                 HuffmanNode huffmanNode = new HuffmanNode();
@@ -114,13 +103,13 @@ public class ParallelHuffmanEncoding {
             }
 
             generateBinaryCodes(priorityQueue.peek(), "");
-
-            System.out.println("Encoding Key Output");
+//
+//            System.out.println("Encoding Key Output");
 //            for (Map.Entry<Character, String> entry: binaryRepresentations.entrySet()) {
 //                System.out.println(entry.getKey() + ": " + entry.getValue());
 //            }
 
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
     }
