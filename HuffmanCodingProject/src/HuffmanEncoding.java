@@ -35,7 +35,7 @@ public class HuffmanEncoding {
 
     public void createHuffmanTree() throws IOException {
         try {
-            long start = System.currentTimeMillis();
+            long start = System.nanoTime();
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
 
             int c;
@@ -47,9 +47,9 @@ public class HuffmanEncoding {
                     frequencyMap.put(character, frequencyMap.get(character) + 1);
                 }
             }
-            long end = System.currentTimeMillis();
+            long end = System.nanoTime();
 
-            System.out.println("It took " + (end-start) + "ms to create the frequency map");
+            System.out.println("It took " + (end-start) + "ns to create the frequency map");
 
 //            for (Map.Entry<Character,Integer> entry: frequencyMap.entrySet()) {
 //                System.out.println(entry.getKey() + ": " + entry.getValue());
@@ -91,11 +91,12 @@ public class HuffmanEncoding {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
     public File encodeFile() {
-        long start = System.currentTimeMillis();
+        long start = System.nanoTime();
         File outputFile = new File("compressed_constitution.txt");
         StringBuilder string = new StringBuilder();
         try {
@@ -114,9 +115,9 @@ public class HuffmanEncoding {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        long end = System.currentTimeMillis();
+        long end = System.nanoTime();
 
-        System.out.println("It took " + (end-start) + "ms to encode the file");
+        System.out.println("It took " + (end-start) + "ns to encode the file");
 
         return outputFile;
     }
