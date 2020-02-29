@@ -55,6 +55,7 @@ public class HuffmanEncoding {
 //                System.out.println(entry.getKey() + ": " + entry.getValue());
 //            }
 
+            start = System.nanoTime();
             for (Map.Entry<Character,Integer> entry: frequencyMap.entrySet()) {
                 HuffmanNode huffmanNode = new HuffmanNode();
 
@@ -84,7 +85,10 @@ public class HuffmanEncoding {
 
             generateBinaryCodes(priorityQueue.peek(), "");
 
-            System.out.println("Encoding Key Output");
+            end = System.nanoTime();
+            System.out.println("It took " + (end-start) + "ns to create the tree");
+
+//            System.out.println("Encoding Key Output");
 //            for (Map.Entry<Character, String> entry: binaryRepresentations.entrySet()) {
 //                System.out.println(entry.getKey() + ": " + entry.getValue());
 //            }

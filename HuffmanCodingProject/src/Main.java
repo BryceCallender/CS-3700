@@ -8,6 +8,7 @@ public class Main {
 
         System.out.println("Constitution file size: " + constitutionFile.length() + " bytes");
 
+        System.out.println("----------------SINGLE THREADED----------------");
         HuffmanEncoding huffmanEncoding = new HuffmanEncoding(constitutionFile);
 
         huffmanEncoding.createHuffmanTree();
@@ -15,6 +16,7 @@ public class Main {
 
         huffmanEncoding.decodeFile();
 
+        System.out.println("----------------MULTI THREADED----------------");
         ParallelHuffmanEncoding parallelHuffmanEncoding = new ParallelHuffmanEncoding(constitutionFile);
 
         parallelHuffmanEncoding.createHuffmanTree();

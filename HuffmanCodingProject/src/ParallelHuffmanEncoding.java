@@ -55,6 +55,7 @@ public class ParallelHuffmanEncoding {
             }
 
             for (ByteBuffer byteBuffer: buffers) {
+                byteBuffer.position(0);
                 CharBuffer charBuffer = Charset.defaultCharset().decode(byteBuffer);
                 fileContents.append(charBuffer);
                 for (char character: charBuffer.array()) {
@@ -71,6 +72,7 @@ public class ParallelHuffmanEncoding {
 
             fileData = fileContents.toString();
 
+            start = System.nanoTime();
             for (Map.Entry<Character,Integer> entry: frequencyMap.entrySet()) {
                 HuffmanNode huffmanNode = new HuffmanNode();
 
@@ -97,9 +99,11 @@ public class ParallelHuffmanEncoding {
 
                 priorityQueue.add(newNode);
             }
-
             generateBinaryCodes(priorityQueue.peek(), "");
-//
+
+            end = System.nanoTime();
+            System.out.println("It took " + (end-start) + "ns to create the tree");
+
 //            System.out.println("Encoding Key Output");
 //            for (Map.Entry<Character, String> entry: binaryRepresentations.entrySet()) {
 //                System.out.println(entry.getKey() + ": " + entry.getValue());
@@ -160,7 +164,7 @@ public class ParallelHuffmanEncoding {
     }
 
     public void decodeFile() {
-        File fileToRead = new File("compressed_constitution_multithread.txt");
+        File fileToRead = new File("constitution_multithread.txt");
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileToRead));
             HuffmanNode current = priorityQueue.peek();
