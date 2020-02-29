@@ -8,9 +8,9 @@ public class DeclarationOfIndependenceMain {
 
             StringBuilder wholeFile = new StringBuilder();
             String line;
+            long startTime = System.nanoTime();
             while((line = fileReader.readLine()) != null) {
                 line = line.replaceAll("\\p{Punct}", "");
-                System.out.println(line);
                 wholeFile.append(line).append(" ").append(" newline ");
             }
 
@@ -24,6 +24,9 @@ public class DeclarationOfIndependenceMain {
             }
 
             outputFile.close();
+            long endTime = System.nanoTime();
+
+            System.out.println("It took " + (endTime-startTime) + "ns to read the file and then reverse it with single thread");
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
