@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c3ed483-65ed-4ab9-b947-5bf4904c4872" name="Default Changelist" comment="" />
+    <list default="true" id="5c3ed483-65ed-4ab9-b947-5bf4904c4872" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/HW5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/AtomicBoundedBuffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/BoundedBuffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/IsolatedBoundedBuffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/NormalSieveOfEratosthenes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/ProducerConsumerActors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/ProducerConsumerAtomics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/ProducerConsumerIsolatedSections.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/ProducerConsumerLock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW5/src/SieveOfEratosthenes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/CS-3700.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../CS-3700.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BufferActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BufferActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConsumerActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsumerActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProducerActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProducerActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/compressed_constitution.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/compressed_constitution.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/constitution_multithread.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/constitution_multithread.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,10 +48,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="KgTzVVsB" />
   </component>
   <component name="ProjectId" id="1ZKYzu0OrhfVEP6JM8NLc13fDw9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -25,10 +63,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/Users/bryce/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,6 +118,7 @@
       <workItem from="1584932391532" duration="3382000" />
       <workItem from="1584979704006" duration="899000" />
       <workItem from="1584986181835" duration="16885000" />
+      <workItem from="1585008763948" duration="2833000" />
     </task>
     <servers />
   </component>
@@ -89,22 +130,26 @@
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="494" y="492" key="#com.intellij.ide.util.MemberChooser/0.0.3840.1560@0.0.3840.1560" timestamp="1584754423745" />
-    <state width="1338" height="340" key="GridCell.Tab.0.bottom" timestamp="1585008076676">
-      <screen x="0" y="0" width="3840" height="1560" />
+    <state width="1636" height="345" key="GridCell.Tab.0.bottom" timestamp="1585013801642">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1338" height="340" key="GridCell.Tab.0.bottom/0.0.3840.1560@0.0.3840.1560" timestamp="1585008076676" />
-    <state width="1338" height="340" key="GridCell.Tab.0.center" timestamp="1585008076676">
-      <screen x="0" y="0" width="3840" height="1560" />
+    <state width="1636" height="345" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1585013801642" />
+    <state width="1636" height="345" key="GridCell.Tab.0.center" timestamp="1585013801641">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1338" height="340" key="GridCell.Tab.0.center/0.0.3840.1560@0.0.3840.1560" timestamp="1585008076676" />
-    <state width="1338" height="340" key="GridCell.Tab.0.left" timestamp="1585008076676">
-      <screen x="0" y="0" width="3840" height="1560" />
+    <state width="1636" height="345" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1585013801641" />
+    <state width="1636" height="345" key="GridCell.Tab.0.left" timestamp="1585013801641">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1338" height="340" key="GridCell.Tab.0.left/0.0.3840.1560@0.0.3840.1560" timestamp="1585008076676" />
-    <state width="1338" height="340" key="GridCell.Tab.0.right" timestamp="1585008076676">
-      <screen x="0" y="0" width="3840" height="1560" />
+    <state width="1636" height="345" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1585013801641" />
+    <state width="1636" height="345" key="GridCell.Tab.0.right" timestamp="1585013801641">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1338" height="340" key="GridCell.Tab.0.right/0.0.3840.1560@0.0.3840.1560" timestamp="1585008076676" />
+    <state width="1636" height="345" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1585013801641" />
     <state width="1342" height="552" key="GridCell.Tab.1.bottom" timestamp="1584852229627">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>

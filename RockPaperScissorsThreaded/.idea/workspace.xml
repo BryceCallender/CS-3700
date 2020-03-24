@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fa67610-e4cf-46e8-9d63-ca34f93751f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/WinnerBarrierAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/compressed_constitution.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/compressed_constitution.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/constitution_multithread.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/constitution_multithread.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game2_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game2_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RPSThread2Game2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RPSThread2Game2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3thread_multithreaded_backwards_independence.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4thread_multithreaded_backwards_independence.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +65,7 @@
       <recent name="C:\Users\bryce\Desktop\CS-3700\RockPaperScissorsThreaded" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DeclarationOfIndependenceMultiThreaded">
+  <component name="RunManager" selected="Application.Game1Memoized">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
       <option name="WIDTH" value="400" />
@@ -85,24 +89,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Game1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game1" />
+      <module name="RockPaperScissorsThreaded" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game1Memoized" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game1Memoized" />
+      <module name="RockPaperScissorsThreaded" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Game2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game2" />
-      <module name="RockPaperScissorsThreaded" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Game2_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game2_2" />
-      <module name="RockPaperScissorsThreaded" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Game2_Future" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game2_Future" />
       <module name="RockPaperScissorsThreaded" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -142,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Game1Memoized" />
+        <item itemvalue="Application.Game1" />
+        <item itemvalue="Application.Game2" />
         <item itemvalue="Application.DeclarationOfIndependenceMultiThreaded" />
         <item itemvalue="Application.DeclarationOfIndependenceMain" />
-        <item itemvalue="Application.Game2_Future" />
-        <item itemvalue="Application.Game2_2" />
-        <item itemvalue="Application.Game2" />
       </list>
     </recent_temporary>
   </component>
@@ -184,8 +188,13 @@
       <workItem from="1582756187940" duration="2378000" />
       <workItem from="1582851873965" duration="13000" />
       <workItem from="1583007502456" duration="929000" />
+<<<<<<< Updated upstream
       <workItem from="1583023024889" duration="1204000" />
       <workItem from="1583814128697" duration="602000" />
+=======
+      <workItem from="1583023024889" duration="811000" />
+      <workItem from="1583379725387" duration="1458000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -209,26 +218,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="440" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1582071131496" />
-    <state width="1259" height="416" key="GridCell.Tab.0.bottom" timestamp="1583008431930">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="308" key="GridCell.Tab.0.bottom" timestamp="1583381188072">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1259" height="416" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1583008431930" />
-    <state width="1636" height="387" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1582590339936" />
-    <state width="1259" height="416" key="GridCell.Tab.0.center" timestamp="1583008431929">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="308" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1583381188072" />
+    <state width="1636" height="308" key="GridCell.Tab.0.center" timestamp="1583381188071">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1259" height="416" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1583008431929" />
-    <state width="1636" height="387" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1582590339935" />
-    <state width="1259" height="416" key="GridCell.Tab.0.left" timestamp="1583008431929">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="308" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1583381188071" />
+    <state width="1636" height="308" key="GridCell.Tab.0.left" timestamp="1583381188071">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1259" height="416" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1583008431929" />
-    <state width="1636" height="387" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1582590339935" />
-    <state width="1259" height="416" key="GridCell.Tab.0.right" timestamp="1583008431930">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1636" height="308" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1583381188071" />
+    <state width="1636" height="308" key="GridCell.Tab.0.right" timestamp="1583381188071">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1259" height="416" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1583008431930" />
-    <state width="1636" height="387" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1582590339935" />
+    <state width="1636" height="308" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1583381188071" />
     <state width="1255" height="360" key="GridCell.Tab.1.bottom" timestamp="1582602163747">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -249,10 +258,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="657" height="703" key="XDebugger.FullValuePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1582269378116" />
-    <state x="164" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1582586237852">
+    <state x="164" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1583379724539">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
-    <state x="164" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1582586237852" />
+    <state x="164" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1583379724539" />
     <state x="313" y="334" key="run.anything.popup" timestamp="1582603410938">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

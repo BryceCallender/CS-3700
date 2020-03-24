@@ -13,7 +13,6 @@ public class Main {
         try {
             //ActorRef actor = actorSystem.actorOf(Props.create(SieveActor.class));
             ActorRef actor = actorSystem.actorOf(Props.create(BufferActor.class), "Buffer");
-            actor.tell("Start", actor);
             //actor.tell(new SieveActor.PrimeContents(IntStream.rangeClosed(2, 1_000_000).boxed().collect(Collectors.toList())), actor);
 
             System.out.println("Press ENTER to exit the system");

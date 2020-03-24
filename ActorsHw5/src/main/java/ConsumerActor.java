@@ -18,7 +18,6 @@ public class ConsumerActor extends AbstractActor {
                 .matchEquals("Remove", s -> {
                     log.info(getSelf().path().name() + " consumed an item.");
                     log.info("Sleeping for 1 second...");
-                    //getContext().getParent().tell("Removed", getSelf());
                     getContext().setReceiveTimeout(Duration.ofSeconds(1));
 
                 })

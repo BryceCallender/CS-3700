@@ -5,14 +5,14 @@ import akka.event.LoggingAdapter;
 public class ProducerActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    private final Integer MAX_ITEMS = 5;
+    private final Integer MAX_ITEMS = 100;
     private Integer numberItemsMade = 0;
 
-    static class ProducerResponse {
-    }
+    static class ProducerResponse {}
+    static class ProducerFinished {}
 
-    static class ProducerFinished {
-
+    ProducerActor() {
+        getContext().getParent().tell("Start", getSelf());
     }
 
     @Override
@@ -21,8 +21,8 @@ public class ProducerActor extends AbstractActor {
                 .matchEquals("Request", s -> {
                     log.info(getSender().path().name() + " has requested an item");
                     if(numberItemsMade < MAX_ITEMS) {
-                        getSender().tell(new ProducerResponse(), getSelf());
                         numberItemsMade++;
+                        getSender().tell(new ProducerResponse(), getSelf());
                     }else {
                         getSender().tell(new ProducerFinished(), getSelf());
                     }

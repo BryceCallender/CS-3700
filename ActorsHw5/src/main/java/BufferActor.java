@@ -54,50 +54,39 @@ public class BufferActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .matchEquals("Start", s-> {
-                    producerActors.get(producerNumber).tell("Request", getSelf());
+                    getSender().tell("Request", getSelf());
                 })
                 .match(ProducerActor.ProducerResponse.class, r -> {
-                    producerNumber = ++producerNumber % producerActors.size();
-
                     if(numberOfItems < MAX) {
                         log.info(getSelf().path().name() + " has received an item from {}", getSender().path().name());
                         numberOfItems++;
-                        if (numberOfItems > 0 && readyConsumers.size() > 0) {
+                        log.info("Buffer size: {}", numberOfItems);
+                        if (readyConsumers.size() > 0) {
                             int randomConsumer = new Random().nextInt(readyConsumers.size());
-                            numberOfItems--;
                             ActorRef consumer = readyConsumers.get(randomConsumer);
                             log.info("Removing " + consumer.path().name() + "!");
+                            numberOfItems--;
                             consumer.tell("Remove", getSelf());
                             readyConsumers.remove(consumer);
                         }
-                    } else {
-                        if(readyConsumers.size() > 0) {
-                            int randomConsumer = new Random().nextInt(readyConsumers.size());
-                            numberOfItems--;
-                            readyConsumers.get(randomConsumer).tell("Remove", getSelf());
-                            readyConsumers.remove(randomConsumer);
-
-                            producerActors.get(producerNumber).tell("Request", getSelf());
-                        }
-                    }
-
-                    if(numberOfItems >= 0 && numberOfItems < MAX) {
-                        producerActors.get(producerNumber).tell("Request", getSelf());
                     }
                 })
                 .match(ProducerActor.ProducerFinished.class, p -> {
                     producersFinished++;
 
                     if(producersFinished.equals(necessaryProducersToStop)) {
+                        log.info("Finished");
                         getSelf().tell(new FinishLeftovers(), getSelf());
                     }
                 })
                 .match(FinishLeftovers.class, f -> {
                     if (numberOfItems > 0 && readyConsumers.size() > 0) {
                         int randomConsumer = new Random().nextInt(readyConsumers.size());
+                        ActorRef consumer = readyConsumers.get(randomConsumer);
+                        log.info("Removing " + consumer.path().name() + "!");
                         numberOfItems--;
-                        readyConsumers.get(randomConsumer).tell("Remove", getSelf());
-                        readyConsumers.remove(randomConsumer);
+                        consumer.tell("Remove", getSelf());
+                        readyConsumers.remove(consumer);
                     }
 
                     if(numberOfItems == 0) {
@@ -105,9 +94,15 @@ public class BufferActor extends AbstractActor {
                     }
                 })
                 .matchEquals("Ready", s -> {
-                    readyConsumers.add(getSender());
-                    log.info("Buffer size: {}", numberOfItems);
-                    log.info("Waiting queue size: {}", readyConsumers.size());
+                    if(numberOfItems > 0) {
+                        numberOfItems--;
+                        getSender().tell("Remove", getSelf());
+                    } else {
+                        if(!readyConsumers.contains(getSender()))
+                            readyConsumers.add(getSender());
+                    }
+                    producerNumber = ++producerNumber % producerActors.size();
+                    producerActors.get(producerNumber).tell("Request", getSelf());
                 })
                 .build();
     }
