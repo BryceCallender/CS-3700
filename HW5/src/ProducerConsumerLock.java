@@ -137,6 +137,6 @@ public class ProducerConsumerLock {
         end = System.currentTimeMillis();
         System.out.println("---------------END 2 PRODUCER, 5 CONSUMER---------------");
         System.out.println("Program is finished");
-        System.out.format("5 producer, 2 consumer took: %dms", end-start);
+        System.out.format("2 producer, 5 consumer took: %dms", end-start);
     }
 }

@@ -16,13 +16,13 @@ public class ConsumerActor extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .matchEquals("Remove", s -> {
-                    log.info(getSelf().path().name() + " consumed an item.");
-                    log.info("Sleeping for 1 second...");
+                    System.out.println(getSelf().path().name() + " consumed an item.");
+                    System.out.println("Sleeping for 1 second...");
                     getContext().setReceiveTimeout(Duration.ofSeconds(1));
                 })
                 .match(ReceiveTimeout.class, t -> {
                     getContext().cancelReceiveTimeout();
-                    log.info(getSelf().path().name() + " has woken up");
+                    System.out.println(getSelf().path().name() + " has woken up");
                     getContext().getParent().tell("Ready", getSelf());
                 })
                 .build();

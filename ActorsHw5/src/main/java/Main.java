@@ -9,7 +9,7 @@ public class Main {
         ActorSystem actorSystem = ActorSystem.create("ActorSystem");
 
         try {
-            //ActorRef actor = actorSystem.actorOf(Props.create(SieveActor.class));
+            //ActorRef actor = actorSystem.actorOf(Props.create(BufferActor.class));
             ActorRef actor = actorSystem.actorOf(Props.create(SieveActor.class, 1_000_000));
         } finally {
             //actorSystem.terminate();
