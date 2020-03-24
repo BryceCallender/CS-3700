@@ -68,7 +68,7 @@
     <property name="android.sdk.path" value="D:/Users/bryce/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HW5" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,7 +81,20 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Bounded_Buffer.Main" />
+      <module name="ActorsHw5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Bounded_Buffer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ActorsHw5" />
@@ -92,6 +105,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -119,6 +133,9 @@
       <workItem from="1584979704006" duration="899000" />
       <workItem from="1584986181835" duration="16885000" />
       <workItem from="1585008763948" duration="2833000" />
+      <workItem from="1585014107768" duration="1624000" />
+      <workItem from="1585018676427" duration="6985000" />
+      <workItem from="1585068292620" duration="9422000" />
     </task>
     <servers />
   </component>
@@ -126,29 +143,33 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="494" y="492" key="#com.intellij.ide.util.MemberChooser" timestamp="1584754423745">
+    <state x="494" y="492" key="#com.intellij.ide.util.MemberChooser" timestamp="1585070281585">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
-    <state x="494" y="492" key="#com.intellij.ide.util.MemberChooser/0.0.3840.1560@0.0.3840.1560" timestamp="1584754423745" />
-    <state width="1636" height="345" key="GridCell.Tab.0.bottom" timestamp="1585013801642">
-      <screen x="0" y="23" width="1680" height="954" />
+    <state x="494" y="492" key="#com.intellij.ide.util.MemberChooser/0.0.3840.1560@0.0.3840.1560" timestamp="1585070281585" />
+    <state x="473" y="538" key="FileChooserDialogImpl" timestamp="1585018772975">
+      <screen x="0" y="0" width="3840" height="1560" />
     </state>
-    <state width="1338" height="340" key="GridCell.Tab.0.bottom/0.0.3840.1560@0.0.3840.1560" timestamp="1585008076676" />
+    <state x="473" y="538" key="FileChooserDialogImpl/0.0.3840.1560@0.0.3840.1560" timestamp="1585018772975" />
+    <state width="1345" height="465" key="GridCell.Tab.0.bottom" timestamp="1585080965696">
+      <screen x="0" y="0" width="3840" height="1560" />
+    </state>
+    <state width="1345" height="465" key="GridCell.Tab.0.bottom/0.0.3840.1560@0.0.3840.1560" timestamp="1585080965696" />
     <state width="1636" height="345" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1585013801642" />
-    <state width="1636" height="345" key="GridCell.Tab.0.center" timestamp="1585013801641">
-      <screen x="0" y="23" width="1680" height="954" />
+    <state width="1345" height="465" key="GridCell.Tab.0.center" timestamp="1585080965696">
+      <screen x="0" y="0" width="3840" height="1560" />
     </state>
-    <state width="1338" height="340" key="GridCell.Tab.0.center/0.0.3840.1560@0.0.3840.1560" timestamp="1585008076676" />
+    <state width="1345" height="465" key="GridCell.Tab.0.center/0.0.3840.1560@0.0.3840.1560" timestamp="1585080965696" />
     <state width="1636" height="345" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1585013801641" />
-    <state width="1636" height="345" key="GridCell.Tab.0.left" timestamp="1585013801641">
-      <screen x="0" y="23" width="1680" height="954" />
+    <state width="1345" height="465" key="GridCell.Tab.0.left" timestamp="1585080965696">
+      <screen x="0" y="0" width="3840" height="1560" />
     </state>
-    <state width="1338" height="340" key="GridCell.Tab.0.left/0.0.3840.1560@0.0.3840.1560" timestamp="1585008076676" />
+    <state width="1345" height="465" key="GridCell.Tab.0.left/0.0.3840.1560@0.0.3840.1560" timestamp="1585080965696" />
     <state width="1636" height="345" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1585013801641" />
-    <state width="1636" height="345" key="GridCell.Tab.0.right" timestamp="1585013801641">
-      <screen x="0" y="23" width="1680" height="954" />
+    <state width="1345" height="465" key="GridCell.Tab.0.right" timestamp="1585080965696">
+      <screen x="0" y="0" width="3840" height="1560" />
     </state>
-    <state width="1338" height="340" key="GridCell.Tab.0.right/0.0.3840.1560@0.0.3840.1560" timestamp="1585008076676" />
+    <state width="1345" height="465" key="GridCell.Tab.0.right/0.0.3840.1560@0.0.3840.1560" timestamp="1585080965696" />
     <state width="1636" height="345" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1585013801641" />
     <state width="1342" height="552" key="GridCell.Tab.1.bottom" timestamp="1584852229627">
       <screen x="0" y="0" width="3840" height="1560" />

@@ -1,42 +1,55 @@
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
-import akka.event.Logging;
-import akka.event.LoggingAdapter;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 public class SieveActor extends AbstractActor {
-    private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
+    private boolean[] numbers;
+    List<ActorRef> children;
 
-    ActorRef child;
+    long start, end;
 
-    public static class PrimeContents {
-        private final List<Integer> values;
+    SieveActor(int n) {
+        children = new ArrayList<>();
+        this.numbers = new boolean[n + 1];
 
-        public PrimeContents(List<Integer> numberList) {
-            values = Collections.unmodifiableList(numberList);
-        }
+        Arrays.fill(numbers, true);
+        start = System.nanoTime();
+        getSelf().tell(2, getSelf());
     }
 
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(PrimeContents.class, prime -> {
-                    if(!prime.values.isEmpty()) {
-                        int step = prime.values.get(0);
-                        log.info("{}", step);
-                        List<Integer> nextNumbers = new ArrayList<>();
-                        for(int i = 1; i < prime.values.size(); i++) {
-                            if(prime.values.get(i) % step != 0) {
-                                nextNumbers.add(prime.values.get(i));
-                            }
-                        }
-                        child = getContext().actorOf(Props.create(SieveActor.class));
-                        child.tell(new PrimeContents(nextNumbers), child);
+                .match(Integer.class, nonPrime -> {
+                    for(int i = nonPrime; i * i <= numbers.length; i++) {
+                        ActorRef child = getContext().actorOf(Props.create(PrimeChecker.class, numbers.length - 1));
+                        children.add(child);
+                        child.tell(i, getSelf());
                     }
+                })
+                .match(PrimeChecker.NonPrime.class, np -> numbers[np.number] = false)
+                .match(ActorRef.class, primeChecker -> {
+                    children.remove(getSender());
+                    if(children.size() == 0) {
+                        getContext().getSelf().tell("Finished", getSelf());
+                    }
+                })
+                .matchEquals("Finished", f -> {
+                    for(int i = 2; i < numbers.length; i++) {
+                        if(numbers[i]) {
+                            System.out.println(i);
+                        }
+                    }
+                    getContext().getSystem().terminate();
+
+                    end = System.nanoTime();
+
+                    System.out.format("%nIt took %dns to do the sieve and output results.%n", end-start);
+                    System.out.format("Time in seconds: %f seconds%n", (double)(end-start) / 1_000_000_000);
                 })
                 .build();
     }

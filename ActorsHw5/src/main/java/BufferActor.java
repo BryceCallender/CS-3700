@@ -66,7 +66,7 @@ public class BufferActor extends AbstractActor {
                             ActorRef consumer = readyConsumers.get(randomConsumer);
                             log.info("Removing " + consumer.path().name() + "!");
                             numberOfItems--;
-                            consumer.tell("Remove", getSelf());
+                            consumer.tell("Remove", getSender());
                             readyConsumers.remove(consumer);
                         }
                     }
@@ -90,6 +90,7 @@ public class BufferActor extends AbstractActor {
                     }
 
                     if(numberOfItems == 0) {
+                        System.out.println("Press ENTER to exit the system");
                         getContext().getSystem().terminate();
                     }
                 })
@@ -101,6 +102,7 @@ public class BufferActor extends AbstractActor {
                         if(!readyConsumers.contains(getSender()))
                             readyConsumers.add(getSender());
                     }
+
                     producerNumber = ++producerNumber % producerActors.size();
                     producerActors.get(producerNumber).tell("Request", getSelf());
                 })

@@ -25,7 +25,7 @@ public class NormalSieveOfEratosthenes {
         //output everything that is true in the list
         for(int i = 2; i < n; i++) {
             if(numberList[i]) {
-                System.out.println(i + " is prime");
+                System.out.println(i);
             }
         }
 

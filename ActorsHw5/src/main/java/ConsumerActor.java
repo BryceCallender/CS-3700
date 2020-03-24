@@ -19,7 +19,6 @@ public class ConsumerActor extends AbstractActor {
                     log.info(getSelf().path().name() + " consumed an item.");
                     log.info("Sleeping for 1 second...");
                     getContext().setReceiveTimeout(Duration.ofSeconds(1));
-
                 })
                 .match(ReceiveTimeout.class, t -> {
                     getContext().cancelReceiveTimeout();

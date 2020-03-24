@@ -5,7 +5,7 @@ import akka.event.LoggingAdapter;
 public class ProducerActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
 
-    private final Integer MAX_ITEMS = 100;
+    private final Integer MAX_ITEMS = 5;
     private Integer numberItemsMade = 0;
 
     static class ProducerResponse {}

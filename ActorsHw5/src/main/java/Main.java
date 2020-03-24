@@ -3,8 +3,6 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 
 import java.io.IOException;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,15 +10,9 @@ public class Main {
 
         try {
             //ActorRef actor = actorSystem.actorOf(Props.create(SieveActor.class));
-            ActorRef actor = actorSystem.actorOf(Props.create(BufferActor.class), "Buffer");
-            //actor.tell(new SieveActor.PrimeContents(IntStream.rangeClosed(2, 1_000_000).boxed().collect(Collectors.toList())), actor);
-
-            System.out.println("Press ENTER to exit the system");
-            System.in.read();
-        } catch (IOException e) {
-            e.printStackTrace();
+            ActorRef actor = actorSystem.actorOf(Props.create(SieveActor.class, 1_000_000));
         } finally {
-            actorSystem.terminate();
+            //actorSystem.terminate();
         }
 
     }
