@@ -12,12 +12,12 @@ public class SieveActor extends AbstractActor {
 
     long start, end;
 
-    SieveActor(int n) {
+    SieveActor(int n, long time) {
+        this.start = time;
         children = new ArrayList<>();
         this.numbers = new boolean[n + 1];
 
         Arrays.fill(numbers, true);
-        start = System.nanoTime();
         getSelf().tell(2, getSelf());
     }
 
@@ -32,6 +32,11 @@ public class SieveActor extends AbstractActor {
                     }
                 })
                 .match(PrimeChecker.NonPrime.class, np -> numbers[np.number] = false)
+                .match(PrimeChecker.CheckPrime.class, p -> {
+                    if(numbers[p.number]) {
+                        System.out.println(p.number);
+                    }
+                })
                 .match(ActorRef.class, primeChecker -> {
                     children.remove(getSender());
                     if(children.size() == 0) {
@@ -39,7 +44,7 @@ public class SieveActor extends AbstractActor {
                     }
                 })
                 .matchEquals("Finished", f -> {
-                    for(int i = 2; i < numbers.length; i++) {
+                    for(int i = (int)Math.sqrt(numbers.length - 1); i < numbers.length; i++) {
                         if(numbers[i]) {
                             System.out.println(i);
                         }

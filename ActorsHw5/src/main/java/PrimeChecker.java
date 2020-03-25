@@ -15,6 +15,14 @@ public class PrimeChecker extends AbstractActor {
         }
     }
 
+    static class CheckPrime {
+        final int number;
+
+        CheckPrime(int number) {
+            this.number = number;
+        }
+    }
+
     @Override
     public Receive createReceive() {
         return receiveBuilder()
@@ -28,6 +36,7 @@ public class PrimeChecker extends AbstractActor {
                         for (int i = num * num; i <= MAX; i += num) {
                             getContext().getParent().tell(new NonPrime(i), getSelf());
                         }
+                        getContext().getParent().tell(new CheckPrime(num), getSelf());
                         getContext().getParent().tell(getSelf(), getSelf());
                     }
                 })
