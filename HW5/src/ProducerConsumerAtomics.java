@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 class AtomicProducer extends Thread {
-    private final int PRODUCTION_COUNT = 100;
+    private final int PRODUCTION_COUNT = 5;
     private AtomicBoundedBuffer buffer;
     int producerNumber;
     int numberItemsProduced = 0;
@@ -32,9 +32,10 @@ class AtomicConsumer extends Thread {
     public void run() {
         while(true) {
             try {
-                buffer.take(consumerNumber);
-                System.out.println("Going to sleep for a second...");
-                Thread.sleep(1000);
+                if(buffer.take(consumerNumber)) {
+                    System.out.println("Going to sleep for a second...");
+                    Thread.sleep(1000);
+                }
             } catch (InterruptedException e) {
                 while(buffer.buffer.get() > 0) {
                     try {
@@ -92,49 +93,49 @@ public class ProducerConsumerAtomics {
         }
 
         long end = System.currentTimeMillis();
-        System.out.println("---------------END 5 PRODUCER, 2 CONSUMER---------------");
-        System.out.println("Program is finished");
-        System.out.format("5 producer, 2 consumer took: %dms", end-start);
-
-        System.out.println("\n\n---------------START 2 PRODUCER, 5 CONSUMER---------------");
-        producers.clear();
-        consumers.clear();
-
-        atomicBoundedBuffer = new AtomicBoundedBuffer(2,5);
-
-        start = System.currentTimeMillis();
-        //Part B
-        for (int i = 0; i < 2; i++) {
-            producers.add(new AtomicProducer(i, atomicBoundedBuffer));
-            producers.get(i).start();
-        }
-
-        for (int i = 0; i < 5; i++) {
-            consumers.add(new AtomicConsumer(i, atomicBoundedBuffer));
-            consumers.get(i).start();
-        }
-
-        for (AtomicProducer producer : producers) {
-            try {
-                producer.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        for (AtomicConsumer consumer : consumers) {
-            consumer.interrupt();
-        }
-
-        for (AtomicConsumer consumer : consumers) {
-            try {
-                consumer.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        end = System.currentTimeMillis();
+//        System.out.println("---------------END 5 PRODUCER, 2 CONSUMER---------------");
+//        System.out.println("Program is finished");
+//        System.out.format("5 producer, 2 consumer took: %dms", end-start);
+//
+//        System.out.println("\n\n---------------START 2 PRODUCER, 5 CONSUMER---------------");
+//        producers.clear();
+//        consumers.clear();
+//
+//        atomicBoundedBuffer = new AtomicBoundedBuffer(2,5);
+//
+//        start = System.currentTimeMillis();
+//        //Part B
+//        for (int i = 0; i < 2; i++) {
+//            producers.add(new AtomicProducer(i, atomicBoundedBuffer));
+//            producers.get(i).start();
+//        }
+//
+//        for (int i = 0; i < 5; i++) {
+//            consumers.add(new AtomicConsumer(i, atomicBoundedBuffer));
+//            consumers.get(i).start();
+//        }
+//
+//        for (AtomicProducer producer : producers) {
+//            try {
+//                producer.join();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        for (AtomicConsumer consumer : consumers) {
+//            consumer.interrupt();
+//        }
+//
+//        for (AtomicConsumer consumer : consumers) {
+//            try {
+//                consumer.join();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        end = System.currentTimeMillis();
         System.out.println("---------------END 2 PRODUCER, 5 CONSUMER---------------");
         System.out.println("Program is finished");
         System.out.format("2 producer, 5 consumer took: %dms", end-start);

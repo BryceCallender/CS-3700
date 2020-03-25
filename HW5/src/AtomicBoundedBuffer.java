@@ -15,22 +15,35 @@ public class AtomicBoundedBuffer {
     }
 
     public boolean take(int consumerNumber) {
-        if(consumerNumber == validConsumerNumber && buffer.get() > 0) {
-            validConsumerNumber = ++validConsumerNumber % maxConsumers;
-            buffer.decrementAndGet();
-            System.out.println("Consumer"+ consumerNumber + " consumed an item");
-            return true;
+        while(true) {
+            if(buffer.compareAndSet(buffer.get(), buffer.get()-1)) {
+                System.out.println("Consumer"+ consumerNumber + " consumed an item");
+                buffer.decrementAndGet();
+                return true;
+            }
         }
-        return false;
+
+//        if(consumerNumber == validConsumerNumber && buffer.get() > 0) {
+//            validConsumerNumber = ++validConsumerNumber % maxConsumers;
+//            buffer.decrementAndGet();
+//
+//            return true;
+//        }
     }
 
     public boolean put(int producerNumber) {
-        if(producerNumber == validProducerNumber && buffer.get() < 10) {
-            validProducerNumber = ++validProducerNumber % maxProducers;
-            buffer.incrementAndGet();
-            System.out.println("Producer" + producerNumber + " has produced an item");
-            return true;
+        while(true) {
+            if (buffer.compareAndSet(buffer.get(), buffer.get() + 1)) {
+                System.out.println("Producer" + producerNumber + " has produced an item");
+                buffer.incrementAndGet();
+                return true;
+            }
         }
-        return false;
+//        if(producerNumber == validProducerNumber && buffer.get() < 10) {
+//            validProducerNumber = ++validProducerNumber % maxProducers;
+//            buffer.incrementAndGet();
+//
+//            return true;
+//        }
     }
 }
