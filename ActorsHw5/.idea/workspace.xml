@@ -2,39 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c3ed483-65ed-4ab9-b947-5bf4904c4872" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/HW5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/AtomicBoundedBuffer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/BoundedBuffer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/IsolatedBoundedBuffer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/NormalSieveOfEratosthenes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/ProducerConsumerActors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/ProducerConsumerAtomics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/ProducerConsumerIsolatedSections.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/ProducerConsumerLock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HW5/src/SieveOfEratosthenes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/CS-3700.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../CS-3700.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BufferActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BufferActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ConsumerActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConsumerActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProducerActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProducerActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/compressed_constitution.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/compressed_constitution.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HuffmanCodingProject/constitution_multithread.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../HuffmanCodingProject/constitution_multithread.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RockPaperScissorsThreaded/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +108,7 @@
       <workItem from="1585083986336" duration="1840000" />
       <workItem from="1585164971850" duration="1444000" />
       <workItem from="1585168200803" duration="9000" />
+      <workItem from="1585172481346" duration="102000" />
     </task>
     <servers />
   </component>
@@ -154,26 +124,26 @@
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="473" y="538" key="FileChooserDialogImpl/0.0.3840.1560@0.0.3840.1560" timestamp="1585018772975" />
-    <state width="1345" height="472" key="GridCell.Tab.0.bottom" timestamp="1585168179968">
-      <screen x="0" y="0" width="3840" height="1560" />
+    <state width="1636" height="380" key="GridCell.Tab.0.bottom" timestamp="1585172582652">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1345" height="472" key="GridCell.Tab.0.bottom/0.0.3840.1560@0.0.3840.1560" timestamp="1585168179968" />
-    <state width="1636" height="345" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1585013801642" />
-    <state width="1345" height="472" key="GridCell.Tab.0.center" timestamp="1585168179968">
-      <screen x="0" y="0" width="3840" height="1560" />
+    <state width="1636" height="380" key="GridCell.Tab.0.bottom/0.23.1680.954@0.23.1680.954" timestamp="1585172582652" />
+    <state width="1636" height="380" key="GridCell.Tab.0.center" timestamp="1585172582652">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1345" height="472" key="GridCell.Tab.0.center/0.0.3840.1560@0.0.3840.1560" timestamp="1585168179968" />
-    <state width="1636" height="345" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1585013801641" />
-    <state width="1345" height="472" key="GridCell.Tab.0.left" timestamp="1585168179968">
-      <screen x="0" y="0" width="3840" height="1560" />
+    <state width="1636" height="380" key="GridCell.Tab.0.center/0.23.1680.954@0.23.1680.954" timestamp="1585172582652" />
+    <state width="1636" height="380" key="GridCell.Tab.0.left" timestamp="1585172582651">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1345" height="472" key="GridCell.Tab.0.left/0.0.3840.1560@0.0.3840.1560" timestamp="1585168179968" />
-    <state width="1636" height="345" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1585013801641" />
-    <state width="1345" height="472" key="GridCell.Tab.0.right" timestamp="1585168179968">
-      <screen x="0" y="0" width="3840" height="1560" />
+    <state width="1636" height="380" key="GridCell.Tab.0.left/0.23.1680.954@0.23.1680.954" timestamp="1585172582651" />
+    <state width="1636" height="380" key="GridCell.Tab.0.right" timestamp="1585172582652">
+      <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="1345" height="472" key="GridCell.Tab.0.right/0.0.3840.1560@0.0.3840.1560" timestamp="1585168179968" />
-    <state width="1636" height="345" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1585013801641" />
+    <state width="1636" height="380" key="GridCell.Tab.0.right/0.23.1680.954@0.23.1680.954" timestamp="1585172582652" />
     <state width="1342" height="552" key="GridCell.Tab.1.bottom" timestamp="1584852229627">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
@@ -194,6 +164,10 @@
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
     <state x="196" y="422" key="SettingsEditor/0.0.3840.1560@0.0.3840.1560" timestamp="1584749310852" />
+    <state x="515" y="331" key="com.intellij.ide.util.TipDialog" timestamp="1585172488286">
+      <screen x="0" y="23" width="1680" height="954" />
+    </state>
+    <state x="515" y="331" key="com.intellij.ide.util.TipDialog/0.23.1680.954@0.23.1680.954" timestamp="1585172488286" />
     <state x="346" y="374" width="672" height="677" key="run.anything.popup" timestamp="1585084521311">
       <screen x="0" y="0" width="3840" height="1560" />
     </state>
