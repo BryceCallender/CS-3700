@@ -44,44 +44,52 @@ class Player3 {
             System.out.println("Player3 picked: " + hand);
 
             try {
-                Socket player1 = new Socket();
-                boolean socketIsConnected = false;
-                while(!socketIsConnected) {
-                    try {
-                        player1 = new Socket(InetAddress.getLocalHost(), player1Port);
-                        socketIsConnected = true;
-                    }
-                    catch (IOException e) {
-                        //System.out.println("Failed connection trying again...");
-                    }
-                }
+//                Socket player1 = new Socket();
+//                boolean socketIsConnected = false;
+//                while(!socketIsConnected) {
+//                    try {
+//                        player1 = new Socket(InetAddress.getLocalHost(), player1Port);
+//                        socketIsConnected = true;
+//                    }
+//                    catch (IOException e) {
+//                        //System.out.println("Failed connection trying again...");
+//                    }
+//                }
+//
+//                System.out.println("Sending player3's hand to player1...");
+//
+//                PrintWriter player1Out = new PrintWriter(player1.getOutputStream(), true);
+//
+//                player1Out.println(hand);
+//
+//                Socket player2 = new Socket();
+//                socketIsConnected = false;
+//                while(!socketIsConnected) {
+//                    try {
+//                        player2 = new Socket(InetAddress.getLocalHost(), player2Port);
+//                        socketIsConnected = true;
+//                    }
+//                    catch (IOException e) {
+//                        //System.out.println("Failed connection trying again...");
+//                    }
+//                }
+//
+//                System.out.println("Sending player3's hand to player2...");
+//
+//                PrintWriter player2Out = new PrintWriter(player2.getOutputStream(), true);
+//
+//                player2Out.println(hand);
+
+                Socket socket1 = new Socket(InetAddress.getLocalHost(), player1Port); //player1 response
+                Socket socket2 = new Socket(InetAddress.getLocalHost(), player2Port); //player2 response
 
                 System.out.println("Sending player3's hand to player1...");
-
-                PrintWriter player1Out = new PrintWriter(player1.getOutputStream(), true);
-
+                PrintWriter player1Out = new PrintWriter(socket1.getOutputStream(), true);
                 player1Out.println(hand);
 
-                Socket player2 = new Socket();
-                socketIsConnected = false;
-                while(!socketIsConnected) {
-                    try {
-                        player2 = new Socket(InetAddress.getLocalHost(), player2Port);
-                        socketIsConnected = true;
-                    }
-                    catch (IOException e) {
-                        //System.out.println("Failed connection trying again...");
-                    }
-                }
-
                 System.out.println("Sending player3's hand to player2...");
-
-                PrintWriter player2Out = new PrintWriter(player2.getOutputStream(), true);
-
+                PrintWriter player2Out = new PrintWriter(socket2.getOutputStream(), true);
                 player2Out.println(hand);
-
-                Socket socket1 = serverSocket.accept(); //player2 response
-                Socket socket2 = serverSocket.accept(); //player3 response
 
                 BufferedReader in1 = new BufferedReader(new InputStreamReader(socket1.getInputStream()));
                 BufferedReader in2 = new BufferedReader(new InputStreamReader(socket2.getInputStream()));
