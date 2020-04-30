@@ -1,0 +1,7 @@
+/home/brycec/KafkaAPIClient/src/main/java/com/spnotes/kafka/simple/Consumer.java
+/home/brycec/KafkaAPIClient/src/main/java/com/spnotes/kafka/partition/Producer.java
+/home/brycec/KafkaAPIClient/src/main/java/com/spnotes/kafka/offset/Consumer.java
+/home/brycec/KafkaAPIClient/src/main/java/com/spnotes/kafka/simple/Producer.java
+/home/brycec/KafkaAPIClient/src/main/java/com/spnotes/kafka/partition/CountryPartitioner.java
+/home/brycec/KafkaAPIClient/src/main/java/com/spnotes/kafka/partition/Consumer.java
+/home/brycec/KafkaAPIClient/src/main/java/com/spnotes/kafka/offset/Producer.java
